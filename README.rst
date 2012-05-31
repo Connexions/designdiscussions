@@ -4,7 +4,8 @@ Design discussions
 
 Please see the HTML updated on
 http://readthedocs.org/docs/cnxdesign/en/latest/ after each checkin to
-github.
+github at http://github.com/Connexions/designdiscussions
+
 
 A single simple place to keep the various connexions design
 discussions.
