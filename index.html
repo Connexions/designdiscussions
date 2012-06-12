@@ -1,4 +1,51 @@
-<html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">ol{margin:0;padding:0}.c5{max-width:468pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</p>
+<html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">ol{margin:0;padding:0}.c5{max-width:468pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4 c8 c7">June 12, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Web View</span></p>
+    <p class="c0"><span>Have been planning to use Pyramid, which comes with TAL. Marvin thinks Django might be a better way to go -- more support, google app engine. Big sites running Django -- https://docs.djangoproject.com/en/dev/topics/templates/ big websites run by Django: http://stackoverflow.com/a/1907034/756056</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">What is in the webview?</span></p>
+    <p class="c0"><span>
+      <ul>
+        <li>Go to a random collection to see what is there. - http://cnx.org/content/randomContent?portal_type=Collection</li>
+        <li>Metadata, content, table of contents, actions (reuse, download etc.), lenses, lens branding, related material (out of date), social networking, order printing, links to the versions, reuse and attribution page, search features, header/branding</li>
+        <li>Layout needs to be simplified for the average reader -- too complex. Want to have all the functionality, but somehow layered in a way that is much easier for basic users to use.</li>
+        <li>Also note that people use the content in different ways</li>
+        <ul>
+          <li>Reading a single module on a single topic found through web search</li>
+          <li>Reading a whole textbook online, in pdf or epub for a class you are taking or teaching</li>
+          <li>Using a homework system that directs you to individual modules as it determines prerequisites you might need.</li>
+        </ul>
+      </ul
+    </span></p>
+    <p class="c0"><span>Might want to consider architecting the webview so that it can eventually be coordinated better with the epub and pdf versions -- same numbering and similar styling. Teachers and learners always ask for this and struggle with how different they are. Phil provided some notes about such which is included at the bottom of the post.</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Web templates and policies:</span></p>
+    <p class="c0"><span>Want to come up with a set of policies and review processes for the web templates do we want:</span></p>
+    <p class="c0"><span>
+      <ul>
+        <li>No business logic in the templates. Just display logic. The logic should be in methods on the objects.</li>
+        <li>May want to control the libraries that are used so that it doesn’t end up with a</li>
+        <li>Enforce with code reviews. Maybe some lint-like tool for some rules that can help expedite the code review.</li>
+        <li>Can have a checklist that can be used by programmers and by reviewers.</li>
+        <li>Phil - Would it be useful to have the same templating language server and client side? Ross: TAL has javascript client and server side.</li>
+      </ul>
+    </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Phil’s notes about making the formats more congruent: Same CSS for Different Formats</span></p>
+    <p class="c0"><span>When collection context is known we could inject "counter-reset: chapter 3, section 2, exercise 12, custom-exercise: 45" so numbering is correct.</span></p>
+    <p class="c0"><span>https://github.com/philschatz/oer.epubcss allows CSS "features" to be "baked into" formats that don't normally support them. For example: epub1 doesn't support counters (for numbering sections/exercises), Some browsers don't support collating elements (move-to).</span></p>
+    <p class="c0"><span>The CNXML to HTML doc has some notes in it: https://docs.google.com/document/d/1E2RGJf0kHdgWOd2590VGmv9YixgmDFo-gX3xlbLGgM0/edit?pli=1</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Some editing/authoring stuff that came up in the conversation</span></p>
+    <p class="c0"><span>
+      <ul>
+        <li>When editing modules -- make sure they are easy to break apart into a series of modules.</li>
+        <li>Make it possible to add search results to a collection. This idea came up twice! (CNX currently lets you add search results to a work area if you are logged in.) </li>
+      </ul>
+    </span></p>
+    
     <p class="c1 c0"><span class="c4"></span></p>    <p class="c0"><span class="c4 c8 c7">June 11, 2012</span></p>
     <p class="c1 c0"><span class="c4"></span></p>
     <p class="c0"><span class="c4">User Security (from Article)</span></p>
