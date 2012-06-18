@@ -1,4 +1,89 @@
-<html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">ol{margin:0;padding:0}.c5{max-width:468pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</p>
+<html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">img.border{padding: 5px 5px 0px 5px;},ol{margin:0;padding:0}.c5{max-width:468pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"class="border"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</span></p>
+    <hr/>
+    <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
+    <hr/>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4 c8 c7">June 18, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4"><span>Articles</span></p>
+    <p class="c0"><span>Ed does not agree with everything in the articles he shares with the team.  They usually contain something interesting that we might want to discuss.   An example is the JavaScript article:
+      </span></p>
+    <p class="c0"><span>http://blogs.adobe.com/bparadie/2012/05/07/the-pew-pew-manifesto/</span></p>
+    <p class="c0"><span>What was interesting was
+    <ul>
+        <li>Java Script - he called it the assembly language of the browser.</li>
+        <li>If you can abstract away from Javascript it can
+        reap benefits.</li>
+    </ul>
+      </span></p>
+    <p class="c0"><span>What we need to be careful about is reinventing the wheel.  Don't write things in something like CoffeeScript if it is just as easy to use JQuery for the same thing.</span></p>
+    <p class="c0"><span>Phil brought up the fact that he is using CoffeeScript (http://coffeescript.org/) for the editor.  CoffeeScript is a language that is compiled into JavaScript.  This lead to a discussion about introducing new technologies.
+      </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Introducing New Technologies to Project</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>Discuss technology as a group before choosing one, so 
+        everyone can be aware of which tools are being used, and why it is being
+        used.
+      </span></p>
+    <p class="c0"><span>It was suggested that Code Reviews can be used to keep an eye on new technologies being added to the project.  Code review is very important.  CoffeeScript is not statically typed, so
+        everything must be named clearly. 
+      </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">How to handle code reviews</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>Send comments by email rather than using github tools?</span></p>
+    <p class="c0"><span>We want code review, but we don't want to grill each
+        other. Do we need to broadcast mistakes on Github. <br>
+      </span></p>
+    <p class="c0"><span>It's possible to fix things on github and comment
+        privately, but doesn't help the learning process.</span></p>
+    <p class="c0"><span>Having multiple people view your code can be very
+        beneficial. <br>
+      </span></p>
+    <p class="c0"><span>Ex: somebody is working on a branch for a sprint, they
+        check each other. Use the branch RSS feed.</span></p>
+    <p class="c0"><span>Don't want outsiders putting bad comments on code, and
+        etc. Intimidation.</span></p>
+    <p class="c0"><span>Delicate comments can be emailed. 
+      </span></p>
+    <p class="c0"><span>Most comments can stay on the public record.
+      </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4"><span>Sprint</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>Tomorrow: Sprint 3. 
+      </span></p>
+    <p class="c0"><span>Dedicate extra time to planning meeting to get cards
+        defined and times estimated. 
+      </span></p>
+    <p class="c0"><span><br>
+      </span></p>
+    <p class="c4"><span><b>Document Decisions</b></span></p>
+    <p class="c0"><span>Need to document design official decisions.
+      </span></p>
+    <p class="c0"><span>Probably will be put in github. Similar to project page.
+        Link to design meetings and official desicions. 
+      </span></p>
+    <p class="c0"><span><br>
+      </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Monitoring</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>Example: space issue. Need to monitor in advance so we
+        can know how to react</span></p>
+    <p class="c0"><span>Fountain:</span></p>
+    <p class="c0"><span>Monett: has signaling limitations. <br>
+      </span></p>
+    <p class="c0"><span>Nagios: used by CNX, currently adequate. perhaps in
+        need of refreshing. <br>
+      </span></p>
+    <p class="c0"><span>CNX also using Munin.</span></p>
+    <p class="c0"><span>Can continue to use Nagios and Munin.  Should be able to monitor in graphite to view trend over time. <br>
+      </span></p>
+
+    
     <hr/>
     <p class="c1 c0"><span class="c4"></span></p>
     <p class="c0"><span class="c4 c8 c7">June 14, 2012</span></p>
