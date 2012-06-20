@@ -3,6 +3,117 @@
     <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
     <hr/>
     <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4 c8 c7">June 20, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4"><b><span>Sprint 3 Planning (Cont'd)</span></b></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>Drag and Drop feature issue: TinyMCE is not passing on
+        mouse event to jquery. 
+      </span></p>
+    <p class="c0"><span>TinyMCE may need to be customized beyond writing new plugins.  If we need to customize the tinyMCE code itself, we need to try and do it in a way that is maintainable and updatable.  This could be difficult in JavaScript.
+      </span></p>
+    <p class="c0"><span>Drag and Drop feature is found in other editors for blockish contents; i.e
+        moving slides, images, etc. We want to have it in tinyMCE to keep the user from pasting which adds complexity.
+      </span></p>
+    <p class="c0"><span>Possible suggestion - use a tree view of the document; able to drag and
+        drop title and label to different sections.
+      </span></p>
+    <p class="c0"><span>We need to decided on one editor. One that is similarly
+        licensed to our current editor to ensure that it is usable with out other code. 
+      </span></p>
+    <p class="c0"><span>We also need to fix copy and paste feature.  Even if we code the drag and drop. Users will use copy and paste. It's what
+        they know from other editors. 
+      </span></p>
+    <p class="c0">We don't want to lose bullets, bold, or italics when the user does copy and paste. We
+      may lose sections. Things lost should be lost completely and not
+      partially.</p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4">Cross site scripting issue</p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    </p>Browser is not responding to 200
+      response it's receiving or returning incorrect response. Possibly because
+      different domains are being used. Should be addressed in a different
+      Sprint. 
+    </p>
+    <p class="c0">This needs to be sorted out because we will want the option of subdomains in the future.</p>
+    <p class="c0">
+    </p>
+    <hr/>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4 c8 c7">June 19, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4"><b><span>Sprint 3 Planning</span></b></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0">Sprint Dates: June 20th- July 9th</p>
+    <p class="c0">Architecture: diagrams will be made explaining all moving
+      parts.
+    </p>
+    <p class="c0">No bidding or estimating necessary on Phil's cards.</p>
+    <p class="c0">Paul's Card: Implement an OpenID consumer within the flask app
+      allowing any openID server to authenticate a user 
+      to the unpub repo</p>
+    <p class="c0">Estimate: 5. 
+    </p>
+    <p class="c0">This is just the web server asking who user is, then giving
+      appropriate login.&nbsp;</p>
+    <p class="c0">Updating the repo will go into a message queue. 
+    </p>
+    <p class="c0">Editor will know that changes are saved : Ajax will pick up
+      and post.&nbsp;</p>
+    <p class="c0">Paul: Implement a robust message queue for all REST changes
+      that will
+      affect unpub repo; Migrate repo functions to become 'listeners' on message
+      queue</p>
+    <p class="c0">Do we actually need a message queue today?</p>
+    <p class="c0">Yes eventually, solves storing issues, and testing repo.&nbsp;</p>
+    <p class="c0">Only publishing will be in parallel.&nbsp;</p>
+    <p class="c0">Implement, but don't use if part of Plone. 
+    </p>
+    <p class="c0">What kind of guarantee do we want so that when user saves, it
+      actually saves?</p>
+    <p class="c0">Advantages of messaging queue - robust, no code necessary, all
+      questions answered. Can be turned off.&nbsp;</p>
+    <p class="c0">UseCase and Architecture should be addressed before message
+      queue.</p>
+    <p class="c0">Message queue = Sprint 4. 
+    </p>
+    <p class="c0">Authentication service: is it time to populate with existing
+      users?</p>
+    <p class="c0">We don't necessarily need an OpenID client/server as well as
+      OAuth client/server.</p>
+    <p class="c0">Need client side and authorization to be completed
+      first.&nbsp;</p>
+    <p class="c0">Paul's Card: Implement an OpenID server 
+    </p>
+    <p class="c0">Estimate #: 13.</p>
+    <p class="c0">EIP: takes too much time to save. No safe way to fix without
+      messaging queue. could be faster. 
+    </p>
+    <p class="c0">TinyMCE: there will not be much validation. 
+    </p>
+    <p class="c0">Save as html because that's what was written. Only go to CNXML
+      if switching editors. 
+    </p>
+    <p class="c0">Should have outsiders test new editing before release to
+      ensure significant improvement.&nbsp;</p>
+    <p class="c0">New repo needs to be much faster. 
+    </p>
+    <p class="c0">New editor will be faster: Asynchronous. Saving will take
+      longer, but editing will be allowed faster. 
+    </p>
+    <p class="c0">Only integrating new editor with Plone; not the remainder of
+      the authoring tool. 
+    </p>
+    <p class="c0">Able to log what people are doing in the editor to have a
+      better idea of what users are doing.&nbsp;</p>
+    <p class="c0">Adding new javascript editor that will work with Plone
+      authoring tool. 
+    </p>
+    <p class="c0">Rhaptos module editor is the unpublished repository in Plone.</p>
+    <p class="c0">
+    </p>
+    <hr/>
+    <p class="c1 c0"><span class="c4"></span></p>
     <p class="c0"><span class="c4 c8 c7">June 18, 2012</span></p>
     <p class="c1 c0"><span class="c4"></span></p>
     <p class="c1 c0"><span class="c4"></span></p>
@@ -35,12 +146,12 @@
     <p class="c1 c0"><span class="c4"></span></p>
     <p class="c0"><span>Send comments by email rather than using github tools?</span></p>
     <p class="c0"><span>We want code review, but we don't want to grill each
-        other. Do we need to broadcast mistakes on Github. <br>
+        other. Do we need to broadcast mistakes on Github. 
       </span></p>
     <p class="c0"><span>It's possible to fix things on github and comment
         privately, but doesn't help the learning process.</span></p>
     <p class="c0"><span>Having multiple people view your code can be very
-        beneficial. <br>
+        beneficial. 
       </span></p>
     <p class="c0"><span>Ex: somebody is working on a branch for a sprint, they
         check each other. Use the branch RSS feed.</span></p>
@@ -58,7 +169,7 @@
     <p class="c0"><span>Dedicate extra time to planning meeting to get cards
         defined and times estimated. 
       </span></p>
-    <p class="c0"><span><br>
+    <p class="c0"><span>
       </span></p>
     <p class="c4"><span><b>Document Decisions</b></span></p>
     <p class="c0"><span>Need to document design official decisions.
@@ -66,7 +177,7 @@
     <p class="c0"><span>Probably will be put in github. Similar to project page.
         Link to design meetings and official desicions. 
       </span></p>
-    <p class="c0"><span><br>
+    <p class="c0"><span>
       </span></p>
     <p class="c1 c0"><span class="c4"></span></p>
     <p class="c0"><span class="c4">Monitoring</span></p>
@@ -74,13 +185,13 @@
     <p class="c0"><span>Example: space issue. Need to monitor in advance so we
         can know how to react</span></p>
     <p class="c0"><span>Fountain:</span></p>
-    <p class="c0"><span>Monett: has signaling limitations. <br>
+    <p class="c0"><span>Monett: has signaling limitations. 
       </span></p>
     <p class="c0"><span>Nagios: used by CNX, currently adequate. perhaps in
-        need of refreshing. <br>
+        need of refreshing. 
       </span></p>
     <p class="c0"><span>CNX also using Munin.</span></p>
-    <p class="c0"><span>Can continue to use Nagios and Munin.  Should be able to monitor in graphite to view trend over time. <br>
+    <p class="c0"><span>Can continue to use Nagios and Munin.  Should be able to monitor in graphite to view trend over time. 
       </span></p>
 
     
@@ -94,10 +205,10 @@
     <p class="c1 c0"><span class="c4"></span></p>
     <p class="c0">Should be the same as web-view, ideally.</p>
     <p class="c0">"Hidden" features - not hidden, but must be clicked to be
-      viewed. <br>
+      viewed. 
     </p>
     <p class="c0">Left: table of contents, lenses portlet, recently viewed,
-      tags<br>
+      tags
       <b><span></span></b></p>
     <p class="c0">Table of Contents should be hidden. 
     </p>
@@ -149,7 +260,7 @@
     <p class="c0">We need to decide to use either text or icons, but not both.
     </p>
     <p class="c0">for example, Google: very short, concise text at the top of
-      the screen in the black bar. <br>
+      the screen in the black bar. 
     </p>
     <p class="c1 c0"><span class="c4"></span></p>
     <p class="c4">Collection Web View Summary:&nbsp;</p>
@@ -325,5 +436,5 @@
     <p class="c0"><span>-logic can be in any random template because of TAL. </span></p>
     <p class="c0"><span>-html stored (editable version) not the same as html rendered to the browser. </span></p>
     <p class="c0"><span>-need a strict policy regarding template allowances. </span></p>
-    <hr/>    <p class="c0"><span class="c4 c8 c7"><br>      </span></p>    <p class="c0"><span class="c4 c8 c7">June 7, 2012</span></p>    <p class="c1 c0"><span class="c4"></span></p>    <p class="c0"><span class="c4">Users</span></p>    <p class="c0"><span>-convert all user IDs to open IDs</span></p>    <p class="c0"><span>-user will be stored in the repository/OAuth server</span></p>    <p class="c0"><span>-structure of profile service : has open ID server and        OAuth server</span></p>    <p class="c0"><span>- does editor get permissions from profile service?        &nbsp;Editor repository does. </span></p>    <p class="c0"><span>-once server validates source, editor uses own        repository. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c2 c0"><img src="images/image00.png" height="322" width="446"></p>    <p class="c0"><span>-storing a profile service for everyone with a login. </span></p>    <p class="c0"><span>-Users stored in...?</span></p>    <p class="c0"><span>-Ask Arjun about not storing users with public content.      </span></p>    <p class="c0"><span>-Domain component that may store users. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c2 c1 c0"><span></span></p>    <p class="c0"><span class="c4">Article: Password Storage</span></p>    <p class="c0"><span>-</span><span class="c6"><a class="c9" href="http://throwingfire.com/storing-passwords-securely/">http://throwingfire.com/storing-passwords-securely/</a></span></p>    <p class="c0"><span>-Hacker News top 50 and top 100: super interesting.</span></p>    <p class="c0"><span>-Author suggests many ways to hash and store passwords.      </span></p>    <p class="c0"><span>-don’t do linkedin.</span></p>    <p class="c0"><span>-Read for Monday to discuss which Python package to use.      </span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Editing Math</span></p>    <p class="c0"><span>-Rich wants to be able to handle LaTex directly in        editor. </span></p>    <p class="c0"><span>-Libraries can be used to convert LaTex to MathML.</span></p>    <p class="c0"><span>-In editor - LaTex can be used; for publishing, must use        MAthML.</span></p>    <p class="c0"><span>-don’t want to edit in MathML.</span></p>    <p class="c0"><span>-Should we attempt to keep math imported with LaTex? aka        preserve LaTex?</span></p>    <p class="c0"><span>-there exists MathML with text. Math mode in LaTex? Not        supported. </span></p>    <p class="c0"><span>-Gustov and American Institute of Math: have textbooks        in LaTex, convert to XML and HTML.</span></p>    <p class="c0"><span>-how to clean up in Math mode of LaTex? perhaps “grab        math mode?”</span></p>    <p class="c0"><span>-Trollix used for LaTex; Mathjax is for editor only. </span></p>    <p class="c0"><span>-Who knows LaTex? Bryan knew best. May need outside        users. involve community.</span></p>    <p class="c0"><span>-Need a list of projects that need assistance from        outside users in community. Use GitHub</span></p>    <p class="c0"><span>-Phil: much of content comes in from Word Importer,and        &nbsp;MathML is most common in repository. What do we use for editing        MathML? </span></p>    <p class="c0"><span>-Is it possible to convert from MathMl to LaTex?</span></p>    <p class="c0"><span>-What if we used MathML, but created annotations in        LaTex?</span></p>    <p class="c0"><span>-Need to be able to edit small portion instead of        viewing whole document.</span></p>    <p class="c0"><span>-System should support content math.</span></p>    <p class="c0"><span>-Support LaTEx = more potential support for content        math.</span></p>    <p class="c0"></p>
-    <hr/>    <p class="c0"><span class="c4 c8"><br>      </span></p>    <p class="c0"><span class="c4 c8">&nbsp;</span><span class="c4 c8 c7">June        6, 2012</span></p>    <p class="c1 c0"><span class="c4 c7"></span></p>    <p class="c0"><span class="c4">Intro </span></p>    <p class="c0"><span>- Kathy wants to use design and interface ideas for        editing and converter (API)</span></p>    <p class="c0"><span>-scheduling a call with TinyMCE to discuss how new        system works with core. Consider inviting someone from Peer to Peer. </span></p>    <p class="c0"><span>-Sprint is scheduled for the end of July in Berlin.</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Queue</span></p>    <p class="c0"><span>- problem: zip and pdf generation no longer separate;        takes too long to generate zip, which is then deleted, leading to pdf        failure. when LaTex is used, also fails. locks zip.</span></p>    <p class="c0"><span>-necessary improvements: </span></p>    <p class="c0 c3"><span>locks for complete zip</span></p>    <p class="c0 c3"><span>system integrated less tightly</span></p>    <p class="c0 c3"><span>testable dependencies before running, ask for        reenqueue</span></p>    <p class="c0 c3"><span>items published all at once, trigger events        simultaneously</span></p>    <p class="c0 c3"><span>ability to freeze in queue, remove from queue, move        to the end of queue</span></p>    <p class="c1 c0 c3"><span></span></p>    <p class="c0"><span class="c4">Complete Zip Changes</span></p>    <p class="c0"><span>- store in cache when generated</span></p>    <p class="c0"><span>-store files on file system instead of ZODB &nbsp;=        quicker access. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">PDF Changes</span></p>    <p class="c0"><span>- check if complete zip exists</span></p>    <p class="c0"><span>-if not, re enqueue itself</span></p>    <p class="c0"><span>-get complete zipform from cache</span></p>    <p class="c0"><span>-launch scripts (need API) instead of Zope.</span></p>    <p class="c0"><span>- possibly launch for a shorter time?</span></p>    <p class="c0"><span>-Json format will be the dictionary of dependencies. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Queue Changes</span></p>    <p class="c0"><span>-improve transactional behavior</span></p>    <p class="c0"><span>-add button to remove something from processing queue</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Physics Issues</span></p>    <p class="c0"><span>-cannot fix wrapping issue without break</span></p>    <p class="c0"><span>-”=” stretchy over bar sign. Phil’s code change is to        detect when trying to replace carat.</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Sociology Issues</span></p>    <p class="c0"><span>-Table of Contents: “...0” should be removed. (Phil.)</span></p>    <p class="c0"><span>-Index: 1st page won’t start until 2nd column because of        dif tags(sp).</span></p>    <p class="c0"><span>-Phil made index span top of page = issue resolved. </span></p>    <br>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c2 c1 c0"><span></span></p>    <p class="c0 c2"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0 c1"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span class="c4"></span></p>    <p class="c0"><span>&nbsp;</span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span class="c4 c7"></span></p>    <p class="c1 c0"><span class="c4 c7"></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>  </body></html>
+    <hr/>    <p class="c0"><span class="c4 c8 c7">      </span></p>    <p class="c0"><span class="c4 c8 c7">June 7, 2012</span></p>    <p class="c1 c0"><span class="c4"></span></p>    <p class="c0"><span class="c4">Users</span></p>    <p class="c0"><span>-convert all user IDs to open IDs</span></p>    <p class="c0"><span>-user will be stored in the repository/OAuth server</span></p>    <p class="c0"><span>-structure of profile service : has open ID server and        OAuth server</span></p>    <p class="c0"><span>- does editor get permissions from profile service?        &nbsp;Editor repository does. </span></p>    <p class="c0"><span>-once server validates source, editor uses own        repository. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c2 c0"><img src="images/image00.png" height="322" width="446"></p>    <p class="c0"><span>-storing a profile service for everyone with a login. </span></p>    <p class="c0"><span>-Users stored in...?</span></p>    <p class="c0"><span>-Ask Arjun about not storing users with public content.      </span></p>    <p class="c0"><span>-Domain component that may store users. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c2 c1 c0"><span></span></p>    <p class="c0"><span class="c4">Article: Password Storage</span></p>    <p class="c0"><span>-</span><span class="c6"><a class="c9" href="http://throwingfire.com/storing-passwords-securely/">http://throwingfire.com/storing-passwords-securely/</a></span></p>    <p class="c0"><span>-Hacker News top 50 and top 100: super interesting.</span></p>    <p class="c0"><span>-Author suggests many ways to hash and store passwords.      </span></p>    <p class="c0"><span>-don’t do linkedin.</span></p>    <p class="c0"><span>-Read for Monday to discuss which Python package to use.      </span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Editing Math</span></p>    <p class="c0"><span>-Rich wants to be able to handle LaTex directly in        editor. </span></p>    <p class="c0"><span>-Libraries can be used to convert LaTex to MathML.</span></p>    <p class="c0"><span>-In editor - LaTex can be used; for publishing, must use        MAthML.</span></p>    <p class="c0"><span>-don’t want to edit in MathML.</span></p>    <p class="c0"><span>-Should we attempt to keep math imported with LaTex? aka        preserve LaTex?</span></p>    <p class="c0"><span>-there exists MathML with text. Math mode in LaTex? Not        supported. </span></p>    <p class="c0"><span>-Gustov and American Institute of Math: have textbooks        in LaTex, convert to XML and HTML.</span></p>    <p class="c0"><span>-how to clean up in Math mode of LaTex? perhaps “grab        math mode?”</span></p>    <p class="c0"><span>-Trollix used for LaTex; Mathjax is for editor only. </span></p>    <p class="c0"><span>-Who knows LaTex? Bryan knew best. May need outside        users. involve community.</span></p>    <p class="c0"><span>-Need a list of projects that need assistance from        outside users in community. Use GitHub</span></p>    <p class="c0"><span>-Phil: much of content comes in from Word Importer,and        &nbsp;MathML is most common in repository. What do we use for editing        MathML? </span></p>    <p class="c0"><span>-Is it possible to convert from MathMl to LaTex?</span></p>    <p class="c0"><span>-What if we used MathML, but created annotations in        LaTex?</span></p>    <p class="c0"><span>-Need to be able to edit small portion instead of        viewing whole document.</span></p>    <p class="c0"><span>-System should support content math.</span></p>    <p class="c0"><span>-Support LaTEx = more potential support for content        math.</span></p>    <p class="c0"></p>
+    <hr/>    <p class="c0"><span class="c4 c8">      </span></p>    <p class="c0"><span class="c4 c8">&nbsp;</span><span class="c4 c8 c7">June        6, 2012</span></p>    <p class="c1 c0"><span class="c4 c7"></span></p>    <p class="c0"><span class="c4">Intro </span></p>    <p class="c0"><span>- Kathy wants to use design and interface ideas for        editing and converter (API)</span></p>    <p class="c0"><span>-scheduling a call with TinyMCE to discuss how new        system works with core. Consider inviting someone from Peer to Peer. </span></p>    <p class="c0"><span>-Sprint is scheduled for the end of July in Berlin.</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Queue</span></p>    <p class="c0"><span>- problem: zip and pdf generation no longer separate;        takes too long to generate zip, which is then deleted, leading to pdf        failure. when LaTex is used, also fails. locks zip.</span></p>    <p class="c0"><span>-necessary improvements: </span></p>    <p class="c0 c3"><span>locks for complete zip</span></p>    <p class="c0 c3"><span>system integrated less tightly</span></p>    <p class="c0 c3"><span>testable dependencies before running, ask for        reenqueue</span></p>    <p class="c0 c3"><span>items published all at once, trigger events        simultaneously</span></p>    <p class="c0 c3"><span>ability to freeze in queue, remove from queue, move        to the end of queue</span></p>    <p class="c1 c0 c3"><span></span></p>    <p class="c0"><span class="c4">Complete Zip Changes</span></p>    <p class="c0"><span>- store in cache when generated</span></p>    <p class="c0"><span>-store files on file system instead of ZODB &nbsp;=        quicker access. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">PDF Changes</span></p>    <p class="c0"><span>- check if complete zip exists</span></p>    <p class="c0"><span>-if not, re enqueue itself</span></p>    <p class="c0"><span>-get complete zipform from cache</span></p>    <p class="c0"><span>-launch scripts (need API) instead of Zope.</span></p>    <p class="c0"><span>- possibly launch for a shorter time?</span></p>    <p class="c0"><span>-Json format will be the dictionary of dependencies. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Queue Changes</span></p>    <p class="c0"><span>-improve transactional behavior</span></p>    <p class="c0"><span>-add button to remove something from processing queue</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Physics Issues</span></p>    <p class="c0"><span>-cannot fix wrapping issue without break</span></p>    <p class="c0"><span>-”=” stretchy over bar sign. Phil’s code change is to        detect when trying to replace carat.</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Sociology Issues</span></p>    <p class="c0"><span>-Table of Contents: “...0” should be removed. (Phil.)</span></p>    <p class="c0"><span>-Index: 1st page won’t start until 2nd column because of        dif tags(sp).</span></p>    <p class="c0"><span>-Phil made index span top of page = issue resolved. </span></p>        <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c2 c1 c0"><span></span></p>    <p class="c0 c2"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0 c1"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span class="c4"></span></p>    <p class="c0"><span>&nbsp;</span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span class="c4 c7"></span></p>    <p class="c1 c0"><span class="c4 c7"></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>  </body></html>
