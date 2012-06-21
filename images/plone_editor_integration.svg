@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="plone_editor_integration.svg">
   <defs
      id="defs4">
     <marker
@@ -51,9 +51,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.755"
-     inkscape:cx="290.09306"
-     inkscape:cy="619.91696"
+     inkscape:zoom="0.53386562"
+     inkscape:cx="261.98653"
+     inkscape:cy="725.67024"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -70,7 +70,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -86,7 +86,7 @@
        x="208.57143"
        y="363.79074" />
     <rect
-       style="fill:none;stroke:#0000ff;stroke-linejoin:round;stroke-opacity:1"
+       style="fill:#d2ffff;stroke:#0000ff;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1"
        id="rect3755"
        width="132.85715"
        height="72.85714"
@@ -102,7 +102,7 @@
          sodipodi:role="line"
          id="tspan3763"
          x="317.14285"
-         y="632.36218"></tspan><tspan
+         y="632.36218" /><tspan
          sodipodi:role="line"
          id="tspan3765"
          x="317.14285"
@@ -116,13 +116,13 @@
          height="59.971958"
          width="185.66733"
          id="rect3757"
-         style="fill:none;stroke:#0000ff;stroke-width:1.13210857;stroke-linejoin:round;stroke-opacity:1" />
+         style="fill:none;stroke:#0000ff;stroke-width:1.13210856999999998;stroke-linejoin:round;stroke-opacity:1" />
       <text
          sodipodi:linespacing="125%"
          id="text3767"
          y="632.36218"
          x="317.14285"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Bookman L;-inkscape-font-specification:URW Bookman L"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
          xml:space="preserve"><tspan
            y="632.36218"
            x="317.14285"
@@ -149,13 +149,13 @@
          height="104.27776"
          width="163.00491"
          id="rect3759"
-         style="fill:none;stroke:#0000ff;stroke-width:1.38277113;stroke-linejoin:round;stroke-opacity:1" />
+         style="fill:none;stroke:#0000ff;stroke-width:1.38277113000000007;stroke-linejoin:round;stroke-opacity:1" />
       <text
          sodipodi:linespacing="125%"
          id="text3775"
          y="713.88538"
          x="342.4314"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Bookman L;-inkscape-font-specification:URW Bookman L"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
          xml:space="preserve"><tspan
            y="713.88538"
            x="342.4314"
@@ -167,13 +167,13 @@
            sodipodi:role="line">preview</tspan></text>
     </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.9912644px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 252.52975,424.96372 56.268101,162.916"
+       style="fill:none;stroke:#000000;stroke-width:0.99126440000000005px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 252.52975,424.96372 39.292855,162.56479"
        id="path3799"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#0000ff;stroke-width:1.03006876;stroke-linejoin:round;stroke-opacity:1"
+       style="fill:#d2ffff;fill-opacity:1;stroke:#0000ff;stroke-width:1.03006876000000003;stroke-linejoin:round;stroke-opacity:1"
        id="rect3779"
        width="284.96548"
        height="187.14285"
@@ -181,7 +181,7 @@
        y="162.36218" />
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;font-family:URW Bookman L;-inkscape-font-specification:URW Bookman L"
+       style="font-size:34.2857132px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
        x="125.71429"
        y="240.93361"
        id="text3781"
@@ -192,7 +192,7 @@
          id="tspan3785">html5</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Bookman L;-inkscape-font-specification:URW Bookman L"
+       style="font-size:34.2857132px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
        x="268.57144"
        y="475.21933"
        id="text3787"
@@ -203,19 +203,19 @@
          y="475.21933">RME</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 252.2654,497.90315 54.285714,348.07647 l 0,0"
+       d="M 252.2654,497.90315 39.716178,349.40097"
        id="path3793"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc" />
+       sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.98156536px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 386.31523,424.89677 325.49693,162.45703"
+       style="fill:none;stroke:#000000;stroke-width:0.98156536000000005px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 385.37866,425.48212 324.20915,162.33996"
        id="path3795"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 385.20921,497.23964 324.28571,348.07647"
+       d="M 385.44335,498.05913 324.28571,348.07647"
        id="path3797"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -227,7 +227,7 @@
        sodipodi:nodetypes="cssc" />
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;font-family:URW Bookman L;-inkscape-font-specification:URW Bookman L"
+       style="font-size:34.2857132px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
        x="128.47682"
        y="291.43503"
        id="text4447"
@@ -237,7 +237,7 @@
          x="128.47682"
          y="291.43503">cnxml</tspan></text>
     <rect
-       style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-linejoin:round;stroke-opacity:1"
+       style="fill:#ffd9d9;fill-opacity:1;stroke:#ff0000;stroke-linejoin:round;stroke-opacity:1"
        id="rect4468"
        width="192.05298"
        height="143.04636"
@@ -245,7 +245,7 @@
        y="104.01781" />
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Bookman L;-inkscape-font-specification:URW Bookman L"
+       style="font-size:34.2857132px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
        x="525.82782"
        y="160.97145"
        id="text4470"
@@ -279,7 +279,7 @@
            height="43.708611"
            x="433.11258"
            y="166.26947" /></flowRegion><flowPara
-         id="flowPara4484"></flowPara></flowRoot>    <path
+         id="flowPara4484" /></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:none;marker-start:url(#Arrow1Lstart)"
        d="m 460.92715,184.81251 c -98.01324,75.49669 -201.3245,50.33113 -201.3245,50.33113"
        id="path4492"
@@ -293,7 +293,7 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Bookman L;-inkscape-font-specification:URW Bookman L"
+       style="font-size:34.2857132px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
        x="403.97351"
        y="399.38205"
        id="text5248"
@@ -316,9 +316,9 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Bookman L;-inkscape-font-specification:URW Bookman L"
-       x="-297.89243"
-       y="65.592148"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       x="-254.80167"
+       y="61.947968"
        id="text5624"
        sodipodi:linespacing="125%"
        transform="matrix(-0.00236924,-0.99999719,0.99999719,-0.00236924,0,0)"
@@ -326,8 +326,8 @@
        inkscape:transform-center-y="-39.735099"><tspan
          sodipodi:role="line"
          id="tspan5626"
-         x="-297.89243"
-         y="65.592148">automated</tspan></text>
+         x="-254.80167"
+         y="61.947968">automated</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Bookman L;-inkscape-font-specification:URW Bookman L"
@@ -339,5 +339,16 @@
          id="tspan5630"
          x="23.841061"
          y="60.309204">Initial Plone/Editor Integration</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       x="60.2649"
+       y="189.42879"
+       id="text3034"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3036"
+         x="60.2649"
+         y="189.42879">Rhaptos Module Editor</tspan></text>
   </g>
 </svg>
