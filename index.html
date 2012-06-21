@@ -1,6 +1,62 @@
-<html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">img.border{padding: 5px 5px 0px 5px;},ol{margin:0;padding:0}.c5{max-width:468pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"class="border"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</span></p>
+<html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">img.border{padding: 5px 5px 0px 5px;},ol{margin:0;padding:0}.c5{max-width:700pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"class="border"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</span></p>
     <hr/>
     <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>June 21, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Intro</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>We need to make a checklist of functioning elements to give us a record of progress, and flesh out requirements.  Ed will create these and add them to the design documentation repository in Github.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Editor</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>What is happening with the public repository implementations (repository being coded by Google)?</span></p>
+    <p class='c0'><span>Early demo: http://light-demo.appspot.com.  It does not do much and has no CNX content.  Google is still working on it, but we have not had an update in about a month.</span></p>
+    <p class='c0'><span>Our plan: map API to Appcale so we have an alternative if the data issue is not resolved.</span></p>
+    <p class='c0'><span>We want to be able to edit in our editor and publish it to the published repository.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Workgroups</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>We want a setup similar to Google Docs:</span></p>
+    <ul><li>modules will be listed similar to documents</li>
+    <li>Folders will be used to represent Workgroups</li>
+    <li>Will be able to Share documents and folders with other users</li>
+    <li>Permissions need to be simplifed if possible.</li>
+    </ul><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Current Plan</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>We're currently working on Authoring Tool:</span></p>
+    <ul><li>Editor - tinyMCE</li>
+    <li>Repository</li>
+    <li>Logging</li>
+    </ul>
+    <p class='c0'><span>We need to finish</span></p>
+    <ul><li>workspace</li>
+    <li>roles</li>
+    <li>publishing</li>
+    <li>import</li>
+    </ul>
+    <p class='c0'><span>The Edtior will be added to Plone once it has enough functionality.  The Editor and the new logging will be added.</span></p>
+    <p class='c0'><span>We want to be able to track the logging and view how people are using the components.</span></p>
+    <p class='c0'><span>How does the editor communicate with editor repository (when we press save)? - tinyMCE saves entire file via API.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Options for Editor After Phase 1</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>The collaborative model will be stored in the repository.</span></p>
+    <p class='c0'><span>Comments should be done with a third party tool, as long as they're stored with ids.</span></p>
+    <p class='c0'><span>We want to be able to see what has been done since last visit to document.</span></p>
+    <p class='c0'><span>We need to decide whether we're using Source Control (something like Git) or not.</span></p>
+    <p class='c0'><span>Is it better to attach all the extra components to the document, or simply use workflow? Hooking things to document complicates things.</span></p>
+    <p class='c0'><span>Source Control doesn't find structural differences.</span></p>
+    <p class='c0'><span>Minimum change for now: when editor modifies, don't overwrite; create another version.</span></p>
+    <p class='c0'><span>Track changes is infinitely messier than a diff tool; we want to use a better version of diff tool.</span></p>
+    <p class='c0'><span>We want to be able to indicate where changes where made,where text was inserted or deleted.</span></p>
+    <p class='c0'><span>We will build in the saving of the versions (we're not building an archive, however); show changes of the session, not for each individual change.</span></p>
+    <p class='c0'><span>Initially, we can save html. Then eliminate lots of the scope creep.</span></p>
+    <p class='c0'><span>If we want to be able to see or edit a doc that is already being edited at the moment, we will need something along the lines of what Flatworld Knowledge (essentially a sort of Track Changes)</span></p>
+        
     <hr/>
     <p class="c1 c0"><span class="c4"></span></p>
     <p class="c0"><span class="c4 c8 c7">June 20, 2012</span></p>
