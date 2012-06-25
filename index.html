@@ -3,6 +3,63 @@
     <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
     <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>June 25, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Michael's Tasks</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>He starts on July 9th.</span></p>
+    <p class='c0'><span>He could work on</span></p>
+    <ul><li>Plone Integration with the editor.  This is a good option if Ross has not completed it by July 9.</li>
+    <li>Testing Web frameworks for Web View.  These would include Pyramid, Django and Straight JQuery and HTML.</li>
+    <li>We will decide as we get closer to July 9.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Development Queue</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Sprint 3 - this ends on July 9.</span></p>
+    <p class='c0'><span>Queue Fix - This covers a couple of changes to the Queue Tool for PDF, EPUB generation.  They include moving the Queue to a separate server and modifying the transactions so that they are shorter.</span></p>
+    <p class='c0'><span>PDF space - The PDF database which stores PDFs, EPUBs, ZIPs, etc. has gotten so large that it will not pack on the production database server.  The fix involves moving all of the file storage to the server harddrive and removing the PDF ZODB file.</span></p>
+    <p class='c0'><span>Chuck PDF fix-dependent on OpenStax College treatment. This is dependent on the OSC PDF fix.  They need to be rolled out together.  Phil should code the OSC fix this week.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Items that need to be Developed</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Facebook Like button - Facebook has changed something and the button is no longer working</span></p>
+    <p class='c0'><span>Google + button - Google has warned us that they are making changes so we need to do likewise so the button continues to work.</span></p>
+    <p class='c0'><span>MathJax 2 upgrade - This will improve math support in IE.</span></p>
+    <p class='c0'><span>License page in iframe.  Needs to happen before end of GSoC</span></p>
+    <p class='c0'><span>Nagios tweak.  Make sure monitoring notifies us before things break.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span>After the things in the development queue, our priority should be Facebook/Google+ buttons, License page and then MathJax upgrade.  The Nagios Tweaks will be an ongoing thing.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Authoring Repository Decision</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Probably won't have more than 100 people on it at once.</span></p>
+    <p class='c0'><span>What we need to save in the repository:</span></p
+    <ul><li>module html</li>
+    <li>module metadata - includes author roles</li>
+    <li>collection html</li>
+    <li>collection metadata - includes author roles</li>
+    <li>workspace</li>
+    <li>access permissions</li>
+    <li>media</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> What to store in OAuth server</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>metadata about the person</span></p>
+    <ul><li>name</li>
+    <li>email</li>
+    <li>etc.</li>
+    </ul>
+    <p class='c0'><span>preferences for authoring - this will be used at a later date.</span></p>
+    
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>June 21, 2012</span></p>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
