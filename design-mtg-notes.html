@@ -1,0 +1,589 @@
+<html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">img.border{padding: 5px 5px 0px 5px;},ol{margin:0;padding:0}.c5{max-width:700pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"class="border"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</span></p>
+    <hr/>
+    <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
+    <hr/>
+<p class='c1 c0'><span class='c4'></span></p>
+<p class='c4 c8 c7'><span>June 26, 2012</span></p>
+<p class='c1 c0'><span class='c4'></span></p>
+<p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+<p class='c4'><span>Editor Repository Discussion Continued</span></p>
+<p class='c1 c0'><span class='c4'></span></p>
+<p class='c0'><span></span></p>
+<p class='c0'><span>Lengthy discussion on the question of storing metadata in HTML or outside of HTML.  It was decided to store the user details (name, email, etc.) outside of the HTML. It will be referenced using a User ID.</span></p>
+<p class='c0'><span></span></p>
+<p class='c1 c0'><span class='c4'></span></p>
+<p class='c4'><span>How will we store metadata</span></p>
+<p class='c1 c0'><span class='c4'></span></p>
+<ul><li>Store Person id in metadata.</li>
+<li>create microdata format for the metadata.</li>
+<li>create microdata format for collxml.</li>
+</ul>
+<p class='c0'><span></span></p>
+<p class='c1 c0'><span class='c4'></span></p>
+<p class='c4'><span>My Stuff: associated with a user id</span></p>
+<p class='c1 c0'><span class='c4'></span></p>
+<ul><li>list of content</li>
+<li>add tags to group items</li>
+<li>share items with others</li>
+</ul>
+<p class='c0'><span></span></p>
+<p class='c1 c0'><span class='c4'></span></p>
+<p class='c4'><span>Decisions</span></p>
+<p class='c1 c0'><span class='c4'></span></p>
+<p class='c0'><span>Module HTML - store on file system with path in DB</span></p>
+<p class='c0'><span>media - store on file system with path in DB</span></p>
+<p class='c0'><span>collection - store on file system with path in DB</span></p>
+<p class='c0'><span>workspace - store in database</span></p>
+
+    
+    
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>June 25, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Michael's Tasks</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>He starts on July 9th.</span></p>
+    <p class='c0'><span>He could work on</span></p>
+    <ul><li>Plone Integration with the editor.  This is a good option if Ross has not completed it by July 9.</li>
+    <li>Testing Web frameworks for Web View.  These would include Pyramid, Django and Straight JQuery and HTML.</li>
+    <li>We will decide as we get closer to July 9.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Development Queue</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Sprint 3 - this ends on July 9.</span></p>
+    <p class='c0'><span>Queue Fix - This covers a couple of changes to the Queue Tool for PDF, EPUB generation.  They include moving the Queue to a separate server and modifying the transactions so that they are shorter.</span></p>
+    <p class='c0'><span>PDF space - The PDF database which stores PDFs, EPUBs, ZIPs, etc. has gotten so large that it will not pack on the production database server.  The fix involves moving all of the file storage to the server harddrive and removing the PDF ZODB file.</span></p>
+    <p class='c0'><span>Chuck PDF fix-dependent on OpenStax College treatment. This is dependent on the OSC PDF fix.  They need to be rolled out together.  Phil should code the OSC fix this week.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Items that need to be Developed</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Facebook Like button - Facebook has changed something and the button is no longer working</span></p>
+    <p class='c0'><span>Google + button - Google has warned us that they are making changes so we need to do likewise so the button continues to work.</span></p>
+    <p class='c0'><span>MathJax 2 upgrade - This will improve math support in IE.</span></p>
+    <p class='c0'><span>License page in iframe.  Needs to happen before end of GSoC</span></p>
+    <p class='c0'><span>Nagios tweak.  Make sure monitoring notifies us before things break.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span>After the things in the development queue, our priority should be Facebook/Google+ buttons, License page and then MathJax upgrade.  The Nagios Tweaks will be an ongoing thing.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Authoring Repository Decision</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Probably won't have more than 100 people on it at once.</span></p>
+    <p class='c0'><span>What we need to save in the repository:</span></p
+    <ul><li>module html</li>
+    <li>module metadata - includes author roles</li>
+    <li>collection html</li>
+    <li>collection metadata - includes author roles</li>
+    <li>workspace</li>
+    <li>access permissions</li>
+    <li>media</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> What to store in OAuth server</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>metadata about the person</span></p>
+    <ul><li>name</li>
+    <li>email</li>
+    <li>etc.</li>
+    </ul>
+    <p class='c0'><span>preferences for authoring - this will be used at a later date.</span></p>
+    
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>June 21, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Intro</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>We need to make a checklist of functioning elements to give us a record of progress, and flesh out reqgit puluirements.  Ed will create these and add them to the design documentation repository in Github.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Editor</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>What is happening with the public repository implementations (repository being coded by Google)?</span></p>
+    <p class='c0'><span>Early demo: http://light-demo.appspot.com.  It does not do much and has no CNX content.  Google is still working on it, but we have not had an update in about a month.</span></p>
+    <p class='c0'><span>Our plan: map API to Appcale so we have an alternative if the data issue is not resolved.</span></p>
+    <p class='c0'><span>We want to be able to edit in our editor and publish it to the published repository.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Workgroups</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>We want a setup similar to Google Docs:</span></p>
+    <ul><li>modules will be listed similar to documents</li>
+    <li>Folders will be used to represent Workgroups</li>
+    <li>Will be able to Share documents and folders with other users</li>
+    <li>Permissions need to be simplifed if possible.</li>
+    </ul><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Current Plan</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>We're currently working on Authoring Tool:</span></p>
+    <ul><li>Editor - tinyMCE</li>
+    <li>Repository</li>
+    <li>Logging</li>
+    </ul>
+    <p class='c0'><span>We need to finish</span></p>
+    <ul><li>workspace</li>
+    <li>roles</li>
+    <li>publishing</li>
+    <li>import</li>
+    </ul>
+    <p class='c0'><span>The Edtior will be added to Plone once it has enough functionality.  The Editor and the new logging will be added.</span></p>
+    <p class='c0'><span>We want to be able to track the logging and view how people are using the components.</span></p>
+    <p class='c0'><span>How does the editor communicate with editor repository (when we press save)? - tinyMCE saves entire file via API.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Options for Editor After Phase 1</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>The collaborative model will be stored in the repository.</span></p>
+    <p class='c0'><span>Comments should be done with a third party tool, as long as they're stored with ids.</span></p>
+    <p class='c0'><span>We want to be able to see what has been done since last visit to document.</span></p>
+    <p class='c0'><span>We need to decide whether we're using Source Control (something like Git) or not.</span></p>
+    <p class='c0'><span>Is it better to attach all the extra components to the document, or simply use workflow? Hooking things to document complicates things.</span></p>
+    <p class='c0'><span>Source Control doesn't find structural differences.</span></p>
+    <p class='c0'><span>Minimum change for now: when editor modifies, don't overwrite; create another version.</span></p>
+    <p class='c0'><span>Track changes is infinitely messier than a diff tool; we want to use a better version of diff tool.</span></p>
+    <p class='c0'><span>We want to be able to indicate where changes where made,where text was inserted or deleted.</span></p>
+    <p class='c0'><span>We will build in the saving of the versions (we're not building an archive, however); show changes of the session, not for each individual change.</span></p>
+    <p class='c0'><span>Initially, we can save html. Then eliminate lots of the scope creep.</span></p>
+    <p class='c0'><span>If we want to be able to see or edit a doc that is already being edited at the moment, we will need something along the lines of what Flatworld Knowledge (essentially a sort of Track Changes)</span></p>
+        
+    <hr/>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4 c8 c7">June 20, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4"><b><span>Sprint 3 Planning (Cont'd)</span></b></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>Drag and Drop feature issue: TinyMCE is not passing on
+        mouse event to jquery. 
+      </span></p>
+    <p class="c0"><span>TinyMCE may need to be customized beyond writing new plugins.  If we need to customize the tinyMCE code itself, we need to try and do it in a way that is maintainable and updatable.  This could be difficult in JavaScript.
+      </span></p>
+    <p class="c0"><span>Drag and Drop feature is found in other editors for blockish contents; i.e
+        moving slides, images, etc. We want to have it in tinyMCE to keep the user from pasting which adds complexity.
+      </span></p>
+    <p class="c0"><span>Possible suggestion - use a tree view of the document; able to drag and
+        drop title and label to different sections.
+      </span></p>
+    <p class="c0"><span>We need to decided on one editor. One that is similarly
+        licensed to our current editor to ensure that it is usable with out other code. 
+      </span></p>
+    <p class="c0"><span>We also need to fix copy and paste feature.  Even if we code the drag and drop. Users will use copy and paste. It's what
+        they know from other editors. 
+      </span></p>
+    <p class="c0">We don't want to lose bullets, bold, or italics when the user does copy and paste. We
+      may lose sections. Things lost should be lost completely and not
+      partially.</p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4">Cross site scripting issue</p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    </p>Browser is not responding to 200
+      response it's receiving or returning incorrect response. Possibly because
+      different domains are being used. Should be addressed in a different
+      Sprint. 
+    </p>
+    <p class="c0">This needs to be sorted out because we will want the option of subdomains in the future.</p>
+    <p class="c0">
+    </p>
+    <hr/>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4 c8 c7">June 19, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4"><b><span>Sprint 3 Planning</span></b></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0">Sprint Dates: June 20th- July 9th</p>
+    <p class="c0">Architecture: diagrams will be made explaining all moving
+      parts.
+    </p>
+    <p class="c0">No bidding or estimating necessary on Phil's cards.</p>
+    <p class="c0">Paul's Card: Implement an OpenID consumer within the flask app
+      allowing any openID server to authenticate a user 
+      to the unpub repo</p>
+    <p class="c0">Estimate: 5. 
+    </p>
+    <p class="c0">This is just the web server asking who user is, then giving
+      appropriate login.&nbsp;</p>
+    <p class="c0">Updating the repo will go into a message queue. 
+    </p>
+    <p class="c0">Editor will know that changes are saved : Ajax will pick up
+      and post.&nbsp;</p>
+    <p class="c0">Paul: Implement a robust message queue for all REST changes
+      that will
+      affect unpub repo; Migrate repo functions to become 'listeners' on message
+      queue</p>
+    <p class="c0">Do we actually need a message queue today?</p>
+    <p class="c0">Yes eventually, solves storing issues, and testing repo.&nbsp;</p>
+    <p class="c0">Only publishing will be in parallel.&nbsp;</p>
+    <p class="c0">Implement, but don't use if part of Plone. 
+    </p>
+    <p class="c0">What kind of guarantee do we want so that when user saves, it
+      actually saves?</p>
+    <p class="c0">Advantages of messaging queue - robust, no code necessary, all
+      questions answered. Can be turned off.&nbsp;</p>
+    <p class="c0">UseCase and Architecture should be addressed before message
+      queue.</p>
+    <p class="c0">Message queue = Sprint 4. 
+    </p>
+    <p class="c0">Authentication service: is it time to populate with existing
+      users?</p>
+    <p class="c0">We don't necessarily need an OpenID client/server as well as
+      OAuth client/server.</p>
+    <p class="c0">Need client side and authorization to be completed
+      first.&nbsp;</p>
+    <p class="c0">Paul's Card: Implement an OpenID server 
+    </p>
+    <p class="c0">Estimate #: 13.</p>
+    <p class="c0">EIP: takes too much time to save. No safe way to fix without
+      messaging queue. could be faster. 
+    </p>
+    <p class="c0">TinyMCE: there will not be much validation. 
+    </p>
+    <p class="c0">Save as html because that's what was written. Only go to CNXML
+      if switching editors. 
+    </p>
+    <p class="c0">Should have outsiders test new editing before release to
+      ensure significant improvement.&nbsp;</p>
+    <p class="c0">New repo needs to be much faster. 
+    </p>
+    <p class="c0">New editor will be faster: Asynchronous. Saving will take
+      longer, but editing will be allowed faster. 
+    </p>
+    <p class="c0">Only integrating new editor with Plone; not the remainder of
+      the authoring tool. 
+    </p>
+    <p class="c0">Able to log what people are doing in the editor to have a
+      better idea of what users are doing.&nbsp;</p>
+    <p class="c0">Adding new javascript editor that will work with Plone
+      authoring tool. 
+    </p>
+    <p class="c0">Rhaptos module editor is the unpublished repository in Plone.</p>
+    <p class="c0">
+    </p>
+    <hr/>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4 c8 c7">June 18, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4"><span>Articles</span></p>
+    <p class="c0"><span>Ed does not agree with everything in the articles he shares with the team.  They usually contain something interesting that we might want to discuss.   An example is the JavaScript article:
+      </span></p>
+    <p class="c0"><span>http://blogs.adobe.com/bparadie/2012/05/07/the-pew-pew-manifesto/</span></p>
+    <p class="c0"><span>What was interesting was
+    <ul>
+        <li>Java Script - he called it the assembly language of the browser.</li>
+        <li>If you can abstract away from Javascript it can
+        reap benefits.</li>
+    </ul>
+      </span></p>
+    <p class="c0"><span>What we need to be careful about is reinventing the wheel.  Don't write things in something like CoffeeScript if it is just as easy to use JQuery for the same thing.</span></p>
+    <p class="c0"><span>Phil brought up the fact that he is using CoffeeScript (http://coffeescript.org/) for the editor.  CoffeeScript is a language that is compiled into JavaScript.  This lead to a discussion about introducing new technologies.
+      </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Introducing New Technologies to Project</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>Discuss technology as a group before choosing one, so 
+        everyone can be aware of which tools are being used, and why it is being
+        used.
+      </span></p>
+    <p class="c0"><span>It was suggested that Code Reviews can be used to keep an eye on new technologies being added to the project.  Code review is very important.  CoffeeScript is not statically typed, so
+        everything must be named clearly. 
+      </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">How to handle code reviews</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>Send comments by email rather than using github tools?</span></p>
+    <p class="c0"><span>We want code review, but we don't want to grill each
+        other. Do we need to broadcast mistakes on Github. 
+      </span></p>
+    <p class="c0"><span>It's possible to fix things on github and comment
+        privately, but doesn't help the learning process.</span></p>
+    <p class="c0"><span>Having multiple people view your code can be very
+        beneficial. 
+      </span></p>
+    <p class="c0"><span>Ex: somebody is working on a branch for a sprint, they
+        check each other. Use the branch RSS feed.</span></p>
+    <p class="c0"><span>Don't want outsiders putting bad comments on code, and
+        etc. Intimidation.</span></p>
+    <p class="c0"><span>Delicate comments can be emailed. 
+      </span></p>
+    <p class="c0"><span>Most comments can stay on the public record.
+      </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4"><span>Sprint</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>Tomorrow: Sprint 3. 
+      </span></p>
+    <p class="c0"><span>Dedicate extra time to planning meeting to get cards
+        defined and times estimated. 
+      </span></p>
+    <p class="c0"><span>
+      </span></p>
+    <p class="c4"><span><b>Document Decisions</b></span></p>
+    <p class="c0"><span>Need to document design official decisions.
+      </span></p>
+    <p class="c0"><span>Probably will be put in github. Similar to project page.
+        Link to design meetings and official desicions. 
+      </span></p>
+    <p class="c0"><span>
+      </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Monitoring</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>Example: space issue. Need to monitor in advance so we
+        can know how to react</span></p>
+    <p class="c0"><span>Fountain:</span></p>
+    <p class="c0"><span>Monett: has signaling limitations. 
+      </span></p>
+    <p class="c0"><span>Nagios: used by CNX, currently adequate. perhaps in
+        need of refreshing. 
+      </span></p>
+    <p class="c0"><span>CNX also using Munin.</span></p>
+    <p class="c0"><span>Can continue to use Nagios and Munin.  Should be able to monitor in graphite to view trend over time. 
+      </span></p>
+
+    
+    <hr/>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4 c8 c7">June 14, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4">Tablet Web View 
+    </p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0">Should be the same as web-view, ideally.</p>
+    <p class="c0">"Hidden" features - not hidden, but must be clicked to be
+      viewed. 
+    </p>
+    <p class="c0">Left: table of contents, lenses portlet, recently viewed,
+      tags
+      <b><span></span></b></p>
+    <p class="c0">Table of Contents should be hidden. 
+    </p>
+    <p class="c0">Perhaps as a default, hide table of contents, and have an
+      option to always display table of contents. 
+    </p>
+    <p class="c0">Is it necessary to have a separate page for the table of
+      contents, or just go to the first page of the collection?</p>
+    <p class="c0">Make table of contents discoverable rather than hidden.&nbsp;</p>
+    <p class="c0">If we go straight to the first module, you can't tweet the
+      collection. 
+    </p>
+    <p class="c0">Most users view the content as a holistic book, thus tweet
+      about the collection rather than module. </p>
+    <p class="c0"></p>
+    <p class="c0">Top and bottom social buttons = redundant. We should choose
+      one. 
+    </p>
+    <p class="c0">If a user likes a content halfway through, he or she will
+      want the social buttons right on the screen instead of having to scroll
+      somewhere.&nbsp;</p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4">Metadata/Reuse and Cite: 
+    </p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0">Lenses: perhaps make a popup or a button. Doesn't need to be
+      displayed unless clicked. http://cnx.org/lenses 
+    </p>
+    <p class="c0">Perhaps a button that incorporates all popups: Lenses,
+      portlets, tags. 
+    </p>
+    <p class="c0">Don't want layered popups. Lenses logos will take up too much
+      space. 
+    </p>
+    <p class="c0">Images: use a Facebook approach: when an image is uploaded, 4
+      sizes are created. 
+    </p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4">Recently Viewed</p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0">Perhaps design in a fashion similar to
+      Amazon: Other users viewed this...</p>
+    <p class="c0">When you first look on a module, should have the display of
+      all content features , but a one click button hides everything so the user
+      can just read and view the content.
+    </p>
+    <p class="c0">How important is Recently Viewed? Should we redo or remove?</p>
+    <p class="c0">Hover text.</p>
+    <p class="c0">We need to decide to use either text or icons, but not both.
+    </p>
+    <p class="c0">for example, Google: very short, concise text at the top of
+      the screen in the black bar. 
+    </p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c4">Collection Web View Summary:&nbsp;</p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0">1. No Collection page. Go straight to the first module.</p>
+    <p class="c0">2. Table of Contents with hideable option.&nbsp;</p>
+    <p class="c0">3. When in collection context, social buttons point to
+      collection.&nbsp;</p>
+    <p class="c0">4. Collection metadata- popup that has twisties for separate
+      sections. popup triggered from collection context header.&nbsp;</p>
+    <p class="c0">5. Related material button: combine lenses and tags portlets,
+      display both module and collection info.&nbsp;</p>
+    <p class="c0">6. Move Recently Viewed to search/browse; do not display while
+      viewing content. 
+    </p>
+    <p class="c0">7. Apply #6 to Similar Content.&nbsp;</p>
+    <p class="c0">8. Eliminate text by top level content action buttons; be
+      consistent with text or icons for actions within a given context. See Google Docs when a document is open.
+    </p>
+
+    <hr/>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4 c8 c7">June 13, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Functionality of Each Web View</span></p>
+    <p class="c0"><span>-what should the user see and be able to access on each device</span></p>
+    <p class="c0"><span>-Feature phone view: Very basic. No wasted space. simple header. see collection and contents. back to collection means going back to collection.</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span><img src="images/feature_phone_collection.png" height="544" width="392"></span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span><img src="images/feature_phone_module.png" height="305" width="402"></span></p>
+    <p class="c0"><span>Current m.cnx.org for feature phones</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>can we have a link to TOC at the bottom? Another option is adding link right under the authors.</span></p>
+    <p class="c0"><span>Title, blue CNX bar, module, authors, content, glossary at the bottom</span></p>
+    <p class="c0"><span>Next and Previous options should be seen.</span></p>
+    <p class="c0"><span>Is the browse option necessary? No one uses it.</span></p>
+    <p class="c0"><span>We should remove the View Lenses option.</span></p>
+    <p class="c0"><span>Search will be supplied from Google.</span></p>
+    <p class="c0"><span>ask Ross about access logs on m.cnx.org.</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Smartphone View</span></p>
+    <p class="c0"><span>Similar to Feature phone version.</span></p>
+    <p class="c0"><span>Tabs at the top.</span></p>
+    <p class="c0"><span>Larger header.</span></p>
+    <p class="c0"><span>Table of Contents behaves in the same way that the web site version does; contains twisties (little blue triangle)</span></p>
+        <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span><img src="images/smartphone_collection.png" height="501" width="308"></span></p>
+    <p class="c0"><span>Current m.cnx.org for smartphones</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span>How helpful are the tabs? Frequently do not work.</span></p>
+    <p class="c0"><span>We can remove About Us page, perhaps.</span></p>
+    <p class="c0"><span>Are Lenses and Browse useful on a smart phone?</span></p>
+    <p class="c0"><span>We should make site more "smart-phone-esque". It should look like an app rather than a webpage.</span></p>
+    <p class="c0"><span>Most people are not finding content by browsing. Using a large search bar would be more efficient.</span></p>
+    <p class="c0"><span>Books do not have unique covers - people get confused. All collections look the same.</span></p>
+    <p class="c0"><span>If authors were allowed to choose a random image from their module or collection as the cover. If not, icons will be assigned.</span></p>
+    <p class="c0"><span>Phase 2 suggestion: Cover Creator.</span></p>
+    <p class="c0"><span>Need to make table of contents more readily available (slide out or pop out). That way we can be able to use more ajax and javascript.</span></p>
+    <p class="c0"><span>Must be able to scroll.</span></p>
+    <p class="c0"><span>Look into Bootstrap. http://twitter.github.com/bootstrap/</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Tablet View</span></p>
+    <p class="c0"><span>Should be very close to the full site.</span></p>
+    <p class="c0"><span>Little to no changes should be made.</span></p>
+    <p class="c0"><span>Master/Slave option: chapter TOC on one side, module on the other when in landscape.</span></p>  
+    <p class="c0"><span>don't display table of contents. Perhaps use a button.</span></p>
+    <p class="c0"><span>We want content to main display of the page.</span></p>
+    <p class="c0"><span>Recently Viewed, Similar content,</span></p>
+    <p class="c0"><span>Perhaps we should change to "most people who looked at .... also looked at"</span></p>
+    <p class="c0"><span>Is similarity still viable? How accurate?</span></p>
+    <p class="c0"><span>Current algorithm- performance issue (sometimes completely wrong), inefficient. Accuracy issue.</span></p>
+    <p class="c0"><span>Search engine will use html from tablet, so we need enough links in html so that site is seen as optimally interconnected.</span></p>
+    <p class="c0"><span>Google is capable of indexing the ajax.</span></p>
+    <p class="c0"><span>If Google indexed entire site, it wouldn't matter if Recently Viewed was retrieved.</span></p> 
+    
+    <hr/>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4 c8 c7">June 12, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Web View</span></p>
+    <p class="c0"><span>Have been planning to use Pyramid, which comes with TAL. Marvin thinks Django might be a better way to go -- more support, google app engine. Big sites running Django -- https://docs.djangoproject.com/en/dev/topics/templates/ big websites run by Django: http://stackoverflow.com/a/1907034/756056</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">What is in the webview?</span></p>
+    <p class="c0"><span>
+      <ul>
+        <li>Go to a random collection to see what is there. - http://cnx.org/content/randomContent?portal_type=Collection</li>
+        <li>Metadata, content, table of contents, actions (reuse, download etc.), lenses, lens branding, related material (out of date), social networking, order printing, links to the versions, reuse and attribution page, search features, header/branding</li>
+        <li>Layout needs to be simplified for the average reader -- too complex. Want to have all the functionality, but somehow layered in a way that is much easier for basic users to use.</li>
+        <li>Also note that people use the content in different ways</li>
+        <ul>
+          <li>Reading a single module on a single topic found through web search</li>
+          <li>Reading a whole textbook online, in pdf or epub for a class you are taking or teaching</li>
+          <li>Using a homework system that directs you to individual modules as it determines prerequisites you might need.</li>
+        </ul>
+      </ul
+    </span></p>
+    <p class="c0"><span>Might want to consider architecting the webview so that it can eventually be coordinated better with the epub and pdf versions -- same numbering and similar styling. Teachers and learners always ask for this and struggle with how different they are. Phil provided some notes about such which is included at the bottom of the post.</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Web templates and policies:</span></p>
+    <p class="c0"><span>Want to come up with a set of policies and review processes for the web templates do we want:</span></p>
+    <p class="c0"><span>
+      <ul>
+        <li>No business logic in the templates. Just display logic. The logic should be in methods on the objects.</li>
+        <li>May want to control the libraries that are used so that it doesn’t end up with a</li>
+        <li>Enforce with code reviews. Maybe some lint-like tool for some rules that can help expedite the code review.</li>
+        <li>Can have a checklist that can be used by programmers and by reviewers.</li>
+        <li>Phil - Would it be useful to have the same templating language server and client side? Ross: TAL has javascript client and server side.</li>
+      </ul>
+    </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Phil’s notes about making the formats more congruent: Same CSS for Different Formats</span></p>
+    <p class="c0"><span>When collection context is known we could inject "counter-reset: chapter 3, section 2, exercise 12, custom-exercise: 45" so numbering is correct.</span></p>
+    <p class="c0"><span>https://github.com/philschatz/oer.epubcss allows CSS "features" to be "baked into" formats that don't normally support them. For example: epub1 doesn't support counters (for numbering sections/exercises), Some browsers don't support collating elements (move-to).</span></p>
+    <p class="c0"><span>The CNXML to HTML doc has some notes in it: https://docs.google.com/document/d/1E2RGJf0kHdgWOd2590VGmv9YixgmDFo-gX3xlbLGgM0/edit?pli=1</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Some editing/authoring stuff that came up in the conversation</span></p>
+    <p class="c0"><span>
+      <ul>
+        <li>When editing modules -- make sure they are easy to break apart into a series of modules.</li>
+        <li>Make it possible to add search results to a collection. This idea came up twice! (CNX currently lets you add search results to a work area if you are logged in.) </li>
+      </ul>
+    </span></p>
+    
+    <hr/>
+    <p class="c1 c0"><span class="c4"></span></p>    <p class="c0"><span class="c4 c8 c7">June 11, 2012</span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">User Security (from Article)</span></p>
+    <p class="c0"><span>-Open ID people</span></p>
+    <p class="c0"><span>-force a password change on users</span></p>
+    <p class="c0"><span>- currently, passwords stored in Plone in hash. </span></p>
+    <p class="c0"><span>- old users will have option of keeping or changing password. Encouraged to change. </span></p>
+    <p class="c0"><span>- knowing that encrypted with Sscrypt is not a problem.</span></p>
+    <p class="c0"><span>-Use countdown. &ldquo;Change password in the next X days&rdquo;.</span></p>
+    <p class="c0"><span>-eternal nag - encouraged to change password every time one logs in. </span></p>
+    <p class="c0"><span>-Users:</span></p>
+    <p class="c0"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. use existing Plone hash (after examination)</span></p>
+    <p class="c0"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Run through scrypt with 128 bit salt</span></p>
+    <p class="c0"><span>-all passwords handled through the same path, just with different origins</span></p>
+    <p class="c0"><span>-use same code whether accessing through Plone or open ID user. </span></p>
+    <p class="c0"><span>-same module from same code base; different paths</span></p>
+    <p class="c0"><span>-1 code base on 1 server because on Open ID.</span></p>
+    <p class="c0"><span>- Extra amount of time, with some users using hash 1 and some using hash 2. </span></p>
+    <p class="c0"><span>-If not all users change passwords, there will be a small delay. &nbsp;</span></p>
+    <p class="c0"><span>-Slow transition from scrypt/hash to scrypt/plaintext. </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Incorrect Login</span></p>
+    <p class="c0"><span>-currently, when password is incorrect, we return id and no password. We shouldn&rsquo;t return any information.</span></p>
+    <p class="c0"><span>-If we open up as Open ID repository, we need to be as secure as possible. </span></p>
+    <p class="c0"><span>-At Chase, url didn&rsquo;t contain code path. </span></p>
+    <p class="c0"><span>-attacker would have url that exposes code path.</span></p>
+    <p class="c0"><span>-need to verify origin of request. If session ID isn&rsquo;t in database, request dropped. Prevents Man in the Middle attack. </span></p>
+    <p class="c0"><span>-Nothing is passed as unencrypted parameter. </span></p>
+    <p class="c0"><span>-SSH and strongly encrypted, no hints if fail would be better than current setup. </span></p>
+    <p class="c0"><span>-Blog: store salt per hash per user. </span></p>
+    <p class="c0"><span>-Login Page:</span></p>
+    <p class="c0"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. use SSH</span></p>
+    <p class="c0"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. If a failure, do not expose correct ID. </span></p>
+    <p class="c0"><span>-storing salt with the password=not wise. Will however, prevent rainbow attack.</span></p>
+    <p class="c0"><span>-If password hashed with user = system salt stored with user salt. </span></p>
+    <p class="c0"><span>-Must use strong algorithm. If one can attack database, can attack salt. </span></p>
+    <p class="c0"><span>-Standard - keep salt next to hash.</span></p>
+    <p class="c0"><span>-Storing salt next to hash prevents attack against all, but not against one individual. </span></p>
+    <p class="c0"><span>-Security groups. </span></p>
+    <p class="c0"><span>-Does not matter where salt is stored. Salt for every user = protected. </span></p>
+    <p class="c0"><span>-Store a salt for each hash, but not in a separate location. </span></p>
+    <p class="c1 c0"><span class="c4"></span></p>
+    <p class="c0"><span class="c4">Web View</span></p>
+    <p class="c0"><span>-need to discuss Pyramid/ TAL.</span></p>
+    <p class="c0"><span>-allowed to write Python expressions.</span></p>
+    <p class="c0"><span>-difference between Web View and everything else?</span></p>
+    <p class="c0"><span>-want Web View to display only</span></p>
+    <p class="c0"><span>-logic can be in any random template because of TAL. </span></p>
+    <p class="c0"><span>-html stored (editable version) not the same as html rendered to the browser. </span></p>
+    <p class="c0"><span>-need a strict policy regarding template allowances. </span></p>
+    <hr/>    <p class="c0"><span class="c4 c8 c7">      </span></p>    <p class="c0"><span class="c4 c8 c7">June 7, 2012</span></p>    <p class="c1 c0"><span class="c4"></span></p>    <p class="c0"><span class="c4">Users</span></p>    <p class="c0"><span>-convert all user IDs to open IDs</span></p>    <p class="c0"><span>-user will be stored in the repository/OAuth server</span></p>    <p class="c0"><span>-structure of profile service : has open ID server and        OAuth server</span></p>    <p class="c0"><span>- does editor get permissions from profile service?        &nbsp;Editor repository does. </span></p>    <p class="c0"><span>-once server validates source, editor uses own        repository. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c2 c0"><img src="images/image00.png" height="322" width="446"></p>    <p class="c0"><span>-storing a profile service for everyone with a login. </span></p>    <p class="c0"><span>-Users stored in...?</span></p>    <p class="c0"><span>-Ask Arjun about not storing users with public content.      </span></p>    <p class="c0"><span>-Domain component that may store users. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c2 c1 c0"><span></span></p>    <p class="c0"><span class="c4">Article: Password Storage</span></p>    <p class="c0"><span>-</span><span class="c6"><a class="c9" href="http://throwingfire.com/storing-passwords-securely/">http://throwingfire.com/storing-passwords-securely/</a></span></p>    <p class="c0"><span>-Hacker News top 50 and top 100: super interesting.</span></p>    <p class="c0"><span>-Author suggests many ways to hash and store passwords.      </span></p>    <p class="c0"><span>-don’t do linkedin.</span></p>    <p class="c0"><span>-Read for Monday to discuss which Python package to use.      </span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Editing Math</span></p>    <p class="c0"><span>-Rich wants to be able to handle LaTex directly in        editor. </span></p>    <p class="c0"><span>-Libraries can be used to convert LaTex to MathML.</span></p>    <p class="c0"><span>-In editor - LaTex can be used; for publishing, must use        MAthML.</span></p>    <p class="c0"><span>-don’t want to edit in MathML.</span></p>    <p class="c0"><span>-Should we attempt to keep math imported with LaTex? aka        preserve LaTex?</span></p>    <p class="c0"><span>-there exists MathML with text. Math mode in LaTex? Not        supported. </span></p>    <p class="c0"><span>-Gustov and American Institute of Math: have textbooks        in LaTex, convert to XML and HTML.</span></p>    <p class="c0"><span>-how to clean up in Math mode of LaTex? perhaps “grab        math mode?”</span></p>    <p class="c0"><span>-Trollix used for LaTex; Mathjax is for editor only. </span></p>    <p class="c0"><span>-Who knows LaTex? Bryan knew best. May need outside        users. involve community.</span></p>    <p class="c0"><span>-Need a list of projects that need assistance from        outside users in community. Use GitHub</span></p>    <p class="c0"><span>-Phil: much of content comes in from Word Importer,and        &nbsp;MathML is most common in repository. What do we use for editing        MathML? </span></p>    <p class="c0"><span>-Is it possible to convert from MathMl to LaTex?</span></p>    <p class="c0"><span>-What if we used MathML, but created annotations in        LaTex?</span></p>    <p class="c0"><span>-Need to be able to edit small portion instead of        viewing whole document.</span></p>    <p class="c0"><span>-System should support content math.</span></p>    <p class="c0"><span>-Support LaTEx = more potential support for content        math.</span></p>    <p class="c0"></p>
+    <hr/>    <p class="c0"><span class="c4 c8">      </span></p>    <p class="c0"><span class="c4 c8">&nbsp;</span><span class="c4 c8 c7">June        6, 2012</span></p>    <p class="c1 c0"><span class="c4 c7"></span></p>    <p class="c0"><span class="c4">Intro </span></p>    <p class="c0"><span>- Kathy wants to use design and interface ideas for        editing and converter (API)</span></p>    <p class="c0"><span>-scheduling a call with TinyMCE to discuss how new        system works with core. Consider inviting someone from Peer to Peer. </span></p>    <p class="c0"><span>-Sprint is scheduled for the end of July in Berlin.</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Queue</span></p>    <p class="c0"><span>- problem: zip and pdf generation no longer separate;        takes too long to generate zip, which is then deleted, leading to pdf        failure. when LaTex is used, also fails. locks zip.</span></p>    <p class="c0"><span>-necessary improvements: </span></p>    <p class="c0 c3"><span>locks for complete zip</span></p>    <p class="c0 c3"><span>system integrated less tightly</span></p>    <p class="c0 c3"><span>testable dependencies before running, ask for        reenqueue</span></p>    <p class="c0 c3"><span>items published all at once, trigger events        simultaneously</span></p>    <p class="c0 c3"><span>ability to freeze in queue, remove from queue, move        to the end of queue</span></p>    <p class="c1 c0 c3"><span></span></p>    <p class="c0"><span class="c4">Complete Zip Changes</span></p>    <p class="c0"><span>- store in cache when generated</span></p>    <p class="c0"><span>-store files on file system instead of ZODB &nbsp;=        quicker access. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">PDF Changes</span></p>    <p class="c0"><span>- check if complete zip exists</span></p>    <p class="c0"><span>-if not, re enqueue itself</span></p>    <p class="c0"><span>-get complete zipform from cache</span></p>    <p class="c0"><span>-launch scripts (need API) instead of Zope.</span></p>    <p class="c0"><span>- possibly launch for a shorter time?</span></p>    <p class="c0"><span>-Json format will be the dictionary of dependencies. </span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Queue Changes</span></p>    <p class="c0"><span>-improve transactional behavior</span></p>    <p class="c0"><span>-add button to remove something from processing queue</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Physics Issues</span></p>    <p class="c0"><span>-cannot fix wrapping issue without break</span></p>    <p class="c0"><span>-”=” stretchy over bar sign. Phil’s code change is to        detect when trying to replace carat.</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0"><span class="c4">Sociology Issues</span></p>    <p class="c0"><span>-Table of Contents: “...0” should be removed. (Phil.)</span></p>    <p class="c0"><span>-Index: 1st page won’t start until 2nd column because of        dif tags(sp).</span></p>    <p class="c0"><span>-Phil made index span top of page = issue resolved. </span></p>        <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c2 c1 c0"><span></span></p>    <p class="c0 c2"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>    <p class="c1 c0"><span></span></p>    <p class="c0 c1"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span class="c4"></span></p>    <p class="c0"><span>&nbsp;</span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span class="c4 c7"></span></p>    <p class="c1 c0"><span class="c4 c7"></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>    <p class="c1 c0"><span></span></p>  </body></html>
