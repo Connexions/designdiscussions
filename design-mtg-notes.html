@@ -2,6 +2,89 @@
     <hr/>
     <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
     <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>July 3, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Editor "Version 1"  Features</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>We will support the most popular CNXML elements</span></p>
+    <p class='c0'><span>Kathi wants 1st release in October?</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>API for Unpub Repo</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Paul's rough draft:</span></p>
+    <ul><li>http://frozone.readthedocs.org/en/latest/requirements.html#draft-rest-defintions</li>
+    </ul>
+    <p class='c0'><span>Metadata will be stored in a microdata format in the html. See June 26 notes</span></p>
+    <p class='c0'><span>Collxml will be stored similarly. Also see June 26 notes.</span></p>
+    <p class='c0'><span>Perhaps we can create a button for the metadata editor. Phil is currently working on one.</span></p>
+    <p class='c0'><span>If Editor is stand alone, Html will be stored...?</span></p>
+    <p class='c0'><span>Editor will be stand-alone: put Javascript file in, configure, editor is there, and work is saved when one presses save. Needs no other parts to be configured.</span></p>
+    <p class='c0'><span>Editor, workspace, and repository should not be tied together.  The editing of Metadata, Roles, etc. complicates this.</span></p>
+    <p class='c0'><span>Our main goal - create an editor that can be embedded into any site.</span></p>
+    <p class='c0'><span>To have  stand-alone Editor, we need to have Workspace API to perform workflow tasks.  This coule be a lot of work.  Is it worth it?</span></p>
+    <p class='c0'><span>Ed will create a draft of Editor, Workspace and Unpublished Repository specs before next meeting on Thursday.</span></p>
+
+    
+    
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>July 2, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Where will Different Components Run on Production?</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class="c0"><span><img src="images/Servers-Production.png" height="400" width="800"></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Authoring Services</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Will run on Rice servers</li>
+    <li>Consists of Editor, Workspace and Unpublished Repository</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Web View</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Will run on Google App Engine</li>
+    <li>need to verify that there are no legal issues with running the Web View there</li>
+    <li>Consists of Web View for content, Lenses and Author Profiles</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Published Repository</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>TBD where it will run</li>
+    <li>Houses all published content, export files (EPUB, PDF,etc.) and media</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Authentication Services</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Will run on Rice Servers</li>
+    <li>Consists of OAuth server and OpenID server along with User database</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Logging</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Will run on Rice Servers</li>
+    <li>Centralized logging for all components</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Transformation Services</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Will run on Rice Servers</li>
+    <li>Generates PDF, EPUB, Complete Zip and CNXML files</li>
+    <li>Imports Word, Open Office, HTML and CNXML files</li>
+    </ul>
+
+    
+    
+    <hr/>
 <p class='c1 c0'><span class='c4'></span></p>
 <p class='c4 c8 c7'><span>June 26, 2012</span></p>
 <p class='c1 c0'><span class='c4'></span></p>
