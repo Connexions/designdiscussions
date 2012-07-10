@@ -3,6 +3,40 @@
     <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
     <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>July 10, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Frameworks</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Flask is a one man framework, considered a microframework; maybe we shouldn't use it for a long term because things will get messy.</span></p>
+    <p class='c0'><span>Majority of pyramid works on app engine, as does Django.</span></p>
+    <p class='c0'><span>UUIDs should be unique for each module. Tons of processing - can be done in request, or tell request to capture request, handle request, and complete response cycle by generating UUIDs.</span></p>
+    <p class='c0'><span>We don't want to return to a user on a publish unless we can guarantee that it will be published.</span></p>
+    <p class='c0'><span>If branching and merging is an absolute requirement, the proper metaphor is GitHub, not Google Docs.</span></p>
+    <p class='c0'><span>Google Docs - here is a new ID at a creation point.</span></p>
+    <p class='c0'><span>At minimum, we must provide tools to split one module to create 2. modules.</span></p>
+    <p class='c0'><span>Ross: Expose everything as collections; if the content is split, it becomes a module. If someone else's content is referenced, it can become a collection. If that content is edited, a copy is derived.</span></p>
+    <p class='c0'><span>How does this affect our immediate implementation?</span></p>
+    <p class='c0'><span>The author tool can't give out IDs that the public repository will serve, unless they communicate. Revamp. If too isolated, then we lose those ease of reuse (unique feature)</span></p>
+    <p class='c0'><span>Paul: use single Json document that contains content and subset of existing metadata, and add to subsequent metadata... allows authenticated user to save over the top of the document; a separate index per user will be stored, containing a list of documents the user has rights to, tags, and a location of collections.</span></p>
+    <p class='c0'><span>We hope to continue using the pop bead model.??</span></p>
+    <p class='c0'><span>Google Docs is a good metaphor for writing books that have little interaction.</span></p>
+    <p class='c0'><span>Paul's link :https://speakerdeck.com/u/kennethreitz/p/flasky-goodness</span></p>
+    <p class='c0'><span>If we give up ancestry trails and plain text, we basically give up the merging and branching option.</span></p>
+    <p class='c0'><span>If we're constantly rebasing, shouldn't be a problem.</span></p>
+    <p class='c0'><span>We don't need to support every little editor change.</span></p>
+    <p class='c0'><span>Phil: Make everything a section, and depending on the amount of nesting, you end up with chapters and books and etc.</span></p>
+    <p class='c0'><span>How does this design affect our existing URLs?</span></p>
+    <p class='c0'><span>Don't expose "Edit Module" or "Edit Collection".</span></p>
+    <p class='c0'><span>Paul: put a parent and child into a module.</span></p>
+    <p class='c0'><span>Could there be various ways to leave a section?</span></p>
+    <p class='c0'><span>Collection: and organization of the nodes (smaller than modules) in order. Would always have wrapper around them , not exposed to user.</span></p>
+    <p class='c0'><span>Smash everything into sections! and store in unpublished repository.</span></p>
+    <p class='c0'><span>We don't have to expose the sections to the general public; we should always wrap it.</span></p>
+
+    
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>July 9, 2012</span></p>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
