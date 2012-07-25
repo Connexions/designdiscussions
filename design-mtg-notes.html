@@ -3,6 +3,51 @@
     <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
     <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>July 25, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Web View Test Review</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Michael reviewed his work on the Web View test</span></p>
+    <ul><li>http://docs.cnx.mulich.com/</li>
+    </ul>
+    <p class='c0'><span>Test Examples</span></p>
+    <ul><li>static0.cnx.mulich.com -- html5 with jquery</li>
+    <li>static1.cnx.mulich.com -- Django with Jinja2</li>
+    <li>static2.cnx.mulich.com -- Pyramid with Jinja2</li>
+    </ul><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Pyramid with Jinja2 using Bootstrap</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Gives more options with the addition of TAL from Pyramid</li>
+    <li>Also get responsive design from Bootstrap</li>
+    <li>Jinja2 info: http://jinja.pocoo.org/docs/</li>
+    <li>Bootstrap: http://twitter.github.com/bootstrap/</li>
+    </ul><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Django with Jinja2</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Good simple choice</li>
+    </ul><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> HTML5 with jQuery</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>templating is simple</li>
+    <li>Relies on client side processing for boby rendering</li>
+    </ul><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Best Choice</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Pyramid with Jinja2 using Bootstrap</li>
+    <li>Also use jQuery to do AJAX</li>
+    <li>Body of content is delivered from server.</li>
+    <li>Parts around and behind the content are rendered using AJAX</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span>Some discussion about using Mustache: http://mustache.github.com/</span></p>
+    <p class='c0'><span>Decided that there was no need to do everything client side since the content body, header and footer can be delivered staticly from cache.</span></p>
+    <p class='c0'><span>Collection view could have continuous scrolling where additional module content is added as the user scrolls down.</span></p>
+
+    
+    
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>July 16, 2012</span></p>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
