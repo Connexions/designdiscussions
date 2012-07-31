@@ -3,6 +3,102 @@
     <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
     <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>July 30, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Web View Frameworks</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>It would be nice to have all WebView strings in one place.  Does any of the frameworks offer this?</span></p>
+    <p class='c0'><span>If CNX name is changed to OpenStax, we only need to go to one place to change name.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Internationalization</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>We should be building in hooks, but we don't have to implement anything yet (OSF funding).</span></p>
+    <p class='c0'><span>We need a way to do automated translation, even if we don't do too much translation.</span></p>
+    <p class='c0'><span>For languages we don't support, we can have the author provide the strings.</span></p>
+    <p class='c0'><span>From Michael: http://jinja.pocoo.org/docs/extensions/#i18n-extension</span></p>
+    <p class='c0'><span>Discussion about if having Strings in one place is important.  Decided it was not a showstopper.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Authoring Tools Design</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>The notes below are a discussion of the design located at http://connexions.github.com/designdiscussions/AuthoringServicesDesign.xhtml</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Editing properties</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Popup comes up on the side, so the option of ignoring the list is there.</span></p>
+    <p class='c0'><span>Limit items in sidebar to items you can select from dropdown or radio buttons</span></p>
+    <p class='c0'><span>Any editing happens in the editor itself.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Editing Math</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Kathy would like us to use ASCII math (Siyavula uses it). MathJax should handle it.</span></p>
+    <p class='c0'><span>Phil shared an editor example: (use Firefox) http://wysiwhat.github.com/Aloha-Editor/src/demo/math/</span></p>
+    <ul><li>Do Ctrl+M.</li>
+    <li>Enter some math where the cursor is such as: x^2_v</li>
+    <li>Math  should be rendered in red box above cursor</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Import popup</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>we want to simplify to one page.</span></p>
+    <p class='c0'><span>User does not have to select a file type.  Type is determined by system after upload.</span></p>
+    <p class='c0'><span>By allowing people to attempt to import items we do not support, we can see what we need to support in the future.</span></p>
+    <p class='c0'><span>NO SITE ERRORS SHOULD BE DISPLAYED TO USER.</span></p>
+    <p class='c0'><span>Ed will update the mockup to remove type selection.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Publishing</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Do not display checklist on publishing page.</span></p>
+    <p class='c0'><span>Need to show license agreement.</span></p>
+    <p class='c0'><span>Should validate items that are not complete before allowing publishing</span></p>
+    <ul><li>title</li>
+    <li>Validate links to cnx content are valid</li>
+    </ul>
+    <p class='c0'><span>After publishing, user will be taken back to workspace where he or she can view the status of content.</span></p>
+    <p class='c0'><span>Ross's idea: Check for errors before the user tries to publish. Perhaps show errors when user tries to save.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Roles</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>We want to eliminate having 2 sections. Should be able to add people, and eliminate existing roles.</span></p>
+    <p class='c0'><span>If user adds someone using gmail address, we search for...? With OpenID, we don't see their email, we send them an email, and they must click the link, login, and confirm.</span></p>
+    <p class='c0'><span>Exisiting users must authenticate.</span></p>
+    <p class='c0'><span>We need an option to not display author's email on content. Perhaps use OpenStax idea, and have option to email author, but don't display email.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Add Files</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Current mockup - Need to simplify add pages. User should only be taken to one page. Perhaps include a preview.</span></p>
+    <p class='c0'><span>Any uploaded file must be referred to. We currently have too many authors linking to untouched items.</span></p>
+    <p class='c0'><span>Updating images: there's a benefit to having an image have a new name- solves caching issue.</span></p>
+    <p class='c0'><span>We should eliminate uploading files as a separate step from creating a figure or a link</span></p>
+    <p class='c0'><span>The upload should be an option when creating these elements</span></p>
+    <p class='c0'><span>Import will allow bulk upload if the items are referenced in a document in the zip.</span></p>
+    <p class='c0'><span>Phil suggested we look at Data URI for image storage: https://en.wikipedia.org/wiki/Data_URI_scheme</span></p>
+    <ul><li>Phil will prepare something for Wed. meeting</li>
+    </ul><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Metadata</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Click button to display field or dropdown to add another.</span></p>
+    <p class='c0'><span>Those who care about internationalization didn't really care about language variants.</span></p>
+    <p class='c0'><span>Keywords</span></p>
+    <ul><li>We could use character substitution and have a dictionary, or use a hint, or fins key words. "Did you mean...?"</li>
+    <li>Keywords should be required; make anything that is marked as a term a keyword if none are entered.</li>
+    </ul>
+    <p class='c0'><span>Summary should be required.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Logging</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Things to log</span></p>
+    <ul><li>what they click on toolbar</li>
+    <li>saving content</li>
+    <li>selecting something from dropdown</li>
+    <li>clicking cancel/save</li>
+    </ul>
+    <p class='c0'><span>Ed to add logging info to design doc</span></p>
+    
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>July 25, 2012</span></p>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
