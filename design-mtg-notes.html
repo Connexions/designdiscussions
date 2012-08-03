@@ -3,6 +3,45 @@
     <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
     <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>August 1, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Data URI Discussion</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Phil: https://en.wikipedia.org/wiki/Data_URI_scheme</span></p>
+    <p class='c0'><span>Phil is suggesting we use Data URIs to store images and other files in the HTML.  This would be used in the editor, but possibly not in the Web View.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Pros</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Makes drag and drop a client side operation which would make for a good user experience.</li>
+    </ul><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Cons</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Will impact the performance of the editor</li>
+    <li>Prevents caching by the browser which will be another performance hit.</li>
+    <li>Does not work well in IE.  IE 9 has some support.</li>
+    </ul>
+    <p class='c0'><span>It is unclear how it will perform with some images like the ones from Biology or Physics.  Phil has a working prototype at http://oerpub.github.com/oerpub.editor/.  The team will test it and report back on Monday.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Workspace</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Discussion about Workspace design at http://connexions.github.com/designdiscussions/AuthoringServicesDesign.xhtml</span></p>
+    <p class='c0'><span>There should only be 2 states: editing and published.</span></p>
+    <p class='c0'><span>Phil: only batch operations allowed in Workspace; to edit an individual part, must use editor.</span></p>
+    <p class='c0'><span>Ed: Maybe, when you mouse over module, collection, etc, display the Roles/Metadata options.</span></p>
+    <p class='c0'><span>How do we combine all of the options? Perhaps just list them all?</span></p>
+    <p class='c0'><span>Import/Export function done at the Workspace. Done by the Add button.</span></p>
+    <p class='c0'><span>Folders - should have drag and drop. Phil: maybe in v2 or etc, you can drag a module onto a collection, and it can become part of the collection. Could also drag a collection or module into a folder.</span></p>
+    <p class='c0'><span>Remove links to Metadata annd Roles.  We should have a toolbar with a list of operations.</span></p>
+    <p class='c0'><span>Add 2 columns</span></p>
+    <ul><li>Last modified by</li>
+    <li>Last Modified Date</li>
+    </ul>
+    <p class='c0'><span>Ed will update the mockup to reflect the changes.</span></p>
+      
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>July 30, 2012</span></p>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
