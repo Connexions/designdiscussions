@@ -1,6 +1,128 @@
 <html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">img.border{padding: 5px 5px 0px 5px;},ol{margin:0;padding:0}.c5{max-width:700pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"class="border"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</span></p>    
     <hr/>
     <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
+        <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>August 6, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Data URI</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>client side image storing. The goal was to simplify image upload by sending image bits via html to server</span></p>
+    <p class='c0'><span>Homework was to test Phil's editor by dragging and dropping images into editor</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Testing Phil's Editor Feedback:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Discussion of performance of editor in multiple browsers. Pro's and Con's mentioned.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Ed (tested with Bio Images):</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Chrome - great performance</li>
+    <li>Firefox - performance issue - images lock browser until the image is loaded</li>
+    <li>Pro's UI friendly, performance issue would remain with other methods particularly with Firefox</li>
+    <li>Con's performance issues that are browser specific (Firefox, IE9 doesn't work), replacing image: user has to drop image directly on top of current image,   resize/edit image upon  dragging and dropping, user has no idea why browser is lagging due to the fact the image appears in browser, Firefox widely used browser</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Ross:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Similiar testing issues in Firefox</span></p>
+    <ul><li>not comfortable using this technique with Published Repo</li>
+    <li>comfortable using this technique with smaller images with Unpublished Repo</li>
+    <li>local system has access to image. What happens if file URIpath) is dropped in and file uploaded asynchronously in background, then swap images. IGNORE COMMENT</li>
+    <li>data URI isn't used often and therefore not widely tested or implemented in browsers</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Paul:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>store information similarly to way we store content of a section.</li>
+    <li>image separate url from uri</li>
+    <li>html, binary info, request info as needed by editor</li>
+    <li>json document has payload of module, doesn't mean payload has be been html module; can be data contract url containing snippet of html of image, exercise, etc.</li>
+    <li>could be sam uri with different header</li>
+    <li>contract shifted to server to pull each resource</li>
+    <li>are these be treated as two difference resources? - Kathi - either way server creates two different resources</li>
+    </ul><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Data Model</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>set of routines would have to be written to retrieve resources then passes back to server. get resource, check fingerprints, put if unchanged; if new or modified post.</li>
+    <li>all editor should do is edit and save objects that have been modified or new</li>
+    <li>authoring tool receives all updated/new objects - only thing that changes is links in tree (where is this handled)</li>
+    <li>server returns UUID for objects when called</li>
+    <li>editor handles own internal structure then passes to external structure (document tree)</li>
+    <li>UUID would solve innermodule linking by putting in link(internal/external) to UUID's from published/unpublished repos</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <ul><li>text with resources with binary bits with uri's trying to treat page and resources as single document (this causes performance issues)- suggests zipping - would allow to manage resources intrinsically</li>
+    <li>different data model for published and unpublished repos</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Phil:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>converting bits into data URI seems to be the issue in Firefox</li>
+    <li>dropping is independent action - performance in Firefox is due to image size</li>
+    <li>document should not contain data URI's - server side</li>
+    <li>data uri's are only used for newly uploaded images being sent to server vs. image upload piece sends call to retrieve url to resource.</li>
+    <li>same user experience can be written with either method.</li>
+    <li>simplification advantage not performance advantage creates more overhead - not a separate server call</li>
+    <li>attempt was to eliminate that number of dependencies - additional contract has to call cnx.org/image then post to resource url</li>
+    <li>contract between multiple languages/system</li>
+    <li>disallowing data uri forces use of a more complex editor</li>
+    <li>images are never changed - cannot be deleted or edited</li>
+    <li>source attribute on image is replace with new url</li>
+    <li>no hidden resources. elements must be linked with module</li>
+    <li>doc is edited, resource added, url sent to editor in html, at publish time publish repo grabs url and gives resources new id's when saved.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Kathi:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Supporting IE is important</li>
+    <li>Data URI scheme completely separate from document tree</li>
+    <li>elements should be edited in existing location - eliminates performance issue</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Conclusion</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Uri scheme approach has been REJECTED</li>
+    <li>New url scheme needs to be created for editor</li>
+    <li>Data model discussion  - is html the tree or is this different? how do we handle inner module linking? Phil: when published; set of modules are published. Published repo checks for errors(miss modules or resources- which is a set of html files and none are published if there is an error)</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Needs Further Discussion</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>data model - this topic didn't seem clearly defined and differed from member to member</li>
+    <li>new url scheme for resources</li>
+    <li>how do published/unpublished repos will communication with each other</li>
+    <li>inner module linking</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Trello Cards do not reflect completed tasks for Sprint 4</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Sprint 4 extended to 14th</li>
+    <li>open id running, editor integrated, round trip conversion cnxml to html are highest priority tasks for Sprint 4</li>
+    <li>demo on 28th</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Homework</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Read Phil's document regarding published repo</li>
+    
     <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>August 1, 2012</span></p>
