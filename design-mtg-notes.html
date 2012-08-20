@@ -1,6 +1,138 @@
 <html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">img.border{padding: 5px 5px 0px 5px;},ol{margin:0;padding:0}.c5{max-width:700pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"class="border"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</span></p>    
     <hr/>
-    <p><i>These are the notes of the daily design meeting for the CNX Rewrite project.  The meetings are held Monday through Thursday at 10 am CT.</i></p>
+    <p><i>These are the notes of the design meetings for the CNX Rewrite project.  The meetings are held Monday and Wednesday at 10 am CT.</i></p>
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>August 20, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>API Discussion</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Reviewed Phil's document</span></p>
+    <ul><li>https://docs.google.com/document/d/1BGUhq-0ni2lAqDEGKkd1egOnLHjmgXzsBbX3g9Gu1ZA/edit?pli=1#heading=h.dkyxnc9kxg69</li>
+    <li>repository should be responsible for rewriting all of the URLs that reference other modules or other resources (images, etc.)</li>
+    </ul>
+    <p class='c0'><span>Phil thinks the unpublish repository API should be a subset of the Published content repository API.  Ross and Ed disagreed. The point is to make the best API for each repository, not something generic from the start.  if it is possible and logical for them to be the same, fine, but that should not be a design goal.</span></p>
+    <p class='c0'><span>Kathi agrees with Phil about the API.</span></p>
+    <p class='c0'><span>Ross is concerned that the Unpublish Repo API will be too heavyweight for its purposes.  There was a discussion about how the unpublished repo should be saving parts of HTML instead of an intire document.  Ed brought that discvussion to a halt because it has already been decided that we are storing the HTML on the file system which means we should be saving the entire document in version 1.0.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Zip vs Multipart</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>Ross suggested we use multipart messages rather than a zip file.  Kathi brought up the fact that her team had trouble implementing multipart when testing the Sword interface from her OERPub tool.  Zip files are easier to deal with on the command line.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Publishing a module that references another module</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>We talked through the problem of a user publishing a module that has links to an unpublished module.  The Published repo will return  an error if this happens. Having the editor do that check and allowing the user to select to publish both modules at once is not a version 1.0 operation.</span></p>
+    <p class='c0'><span>Api should return some structure that has URLs to published content.</span></p>
+    <p class='c0'><span>Paul suggested we use UUID which would solve some of the rewrite problem.  We will discuss this further on Wed.</span></p>
+    
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>August 15, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>API - Publishing - Resource Handling - Push/Pull</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span></span></p>
+    <ul><li>API should be separate from under the hood behaviors of REPO</li>
+    <li>barebone REPO discussion</li>
+    <li>data contracts of repo</li>
+    <li>resource storage</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Mapping</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>publish is potentially a multi-step, async process</li>
+    <li>repo does not edit or even parse content - bits served will be bits provided by editor</li>
+    <li>Editor POSTs content-to-be-published to same URL</li>
+    <li>includes session key</li>
+    <li>provides mapping of referenced contentids</li>
+    <li>repo never changes bits, we could include crypto signatures as validation.</li>
+    <li>mapping could include ‘pull these bits from this public URL’ as different flag</li>
+    <li>resource map is critical: separates repo from editor at the modular component level. It is essentially a dictionary, mapping</li>
+    <li>as an archive, the repo only provides the bits-as-deposited. If we want partially-already-processed content, then the webview could provide that as a service - the html w/ the map already applied, as it were.</li>
+    <li>the work involved is to parse a map (dictionary) first, and whenever hitting a resource-key in the body content, reflect it through the map to create the actual URL to fetch.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Mapping Alternative</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>feature of signing</li>
+    <li>if the POST in step 1 contains a set of relative paths (like '?url=m9003.html&url=m9004.html') then those are looked up in the signed ZIP payload</li>
+    <li>otherwise, they are remotely GET'd. Then, the 'signed' zip could be throught of as a webserver *content has to be parsed to be verified</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Key Concepts & Concerns from Team Members:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>mapping not needed in editor : only need resources mapped to module not to repository id names should be avoided</li>
+    <li>editor and REPO are separate components, if  id's are shared then they are coupled and these components are not separate defeating our modular design approach</li>
+    <li>local names are no longer needed</li>
+    <li>mapping should be done for other Editors.</li>
+    <li>core feature for main documents with accessible resources</li>
+    <li>minimal should be for archive to store info and send back (file system like storage)</li>
+    <li>Currently our repo acts like a web server with relative urls to access resources.Archive isn't an HTML tree.</li>
+    <li>Build archive not tied to particular format.REPO only needs to map core docs and associate resources. Mapping be a document. Path to resources stored in archive. HTML documents have associated resources[pre-store resources hangs up Editor and creates a garbage issue] Id's will not conflict. Id's are only used as keys for map unique to document.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Two options: either REPO does little work to look within HTML. A mapping document would be needed to convert resourses with URLs. Other options: remove mapping document and change url's within HTML[editor side]</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>dont have to change original authoring bits with map.</li>
+    <li>map shouldn't be part of doc to guarantee bits are that of original author</li>
+    <li>WebView REPO/HTML. Cross referencing modules, collections, resources is an issue that needs resolving.</li>
+    <li>no link validation at Publish</li>
+    <li>don't fetch urls from external sources at publication.</li>
+    <li>validation solution: Editor layer should check two things: is this a valid url? local url for local image?</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Resources Concepts & Concern Cont.</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>publish resources as modules and collections are published</li>
+    <li>map isn't convenient for other services/editors - too Connexions specific</li>
+    <li>fetch original bits from webview/repo. Browser already knows how to pull resources via URL. *either REPO or Editor needs to rewrite bits of resources. Why not have a short lived draft prior to rewrite. Rewrite must happen.</li>
+    <li>all resources do not need to live in REPO should be made publicly, easily accessible.</li>
+    <li>REPO has API then implements a services then REPO will have to change the bits.</li>
+    <li>Resources and copyrights are not about bits, it is about semantics.</li>
+    <li>Store separate metadata for resources and documents. Part of API should be able to send documents and resources. Editor wants low resolutions image. Repo stores highest resolution images. Concerned with pushing all the bits at a time. Example of collection .zip package for API. Go to Physics EPUB as example.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>.zip Payload Case</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>author signs off on unpublished bits by pushing up a .zip file via Editor serverside</li>
+    <li>How does Editor rewrite resources from REPO when Author signs off content if bits are not to be rewritten?</li>
+    <li>Editor could go to REPO and grab module id - defined API hooks. Or REPO could take .zip file with relative links and publish and replace links.</li>
+    <li>Level 1: relative links.</li>
+    <li>Level2: walks HTML pulls links and anchor tags. REPO valiates then Editor would get url's pointing to REPO content. When editing Editor pulls HTML with public links to published content and an href of html points to REPO. When resources are changed, resources are not editable they are create a new.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Epub/PDF</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li> Editor is only required to go to Published Repo and grab module id.</li>
+    <li>Module id is unique. Broken links should be validated via Editor.</li>
+    <li>Image resizing: during PDF/EPUB generation. Services to REPO should validate resource.</li>
+    <li>EPUB/PDF - generate these files and cache at module level. Where do you store mapping between sizes? Use public url as key for service. This would simplify the API</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Summary/Homework</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>REPO rewrites URLS.</li>
+    <li>Editor uses URLS -> when editing we create new urls for the modifiication of the module or collection.</li>
+    <li>Phil:  take small part of EPUB to create sample to explain resource links and id@create would be resoluted for user can create links between modules. Create an example of HTML content linking to diff modules and images and how REPO resolves these. Large collection stress test of parsing links and resources.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Design Topic Monday August 20th</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>id @ create : Editor:</li>
+    
         <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>August 6, 2012</span></p>
