@@ -1,6 +1,107 @@
-<html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">img.border{padding: 5px 5px 0px 5px;},ol{margin:0;padding:0}.c5{max-width:700pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"class="border"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</span></p>    
+<html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">img.border{padding: 5px 5px 0px 5px;},ol{margin:0;padding:0}.c5{max-width:700pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"class="border"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</span></p>
     <hr/>
     <p><i>These are the notes of the design meetings for the CNX Rewrite project.  The meetings are held Monday and Wednesday at 10 am CT.</i></p>
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>August 30, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>API SCENARIO DISCUSSION:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span>Discussing Ed's Spreadsheet: https://docs.google.com/spreadsheet/ccc?key=0ArvuSYeGW6GpdEgzdlhHdG1aWmFHN2dDelEwcUl1YXc#gid=0</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Asynchronous vs. Synchronous</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Decided API will be asynchronous for first generation from the</li>
+    </ul>
+    <p class='c0'><span>following discussed points:</span></p>
+    <ul><li>Module could be synchronous. Collections should be Asynchronous.  This is probably not a good idea.  Everything should work the same way.</li>
+    <li>Synchronous eliminates the need to poll for results</li>
+    <li>Synchronous results in long http connections. Cons: idles, error out, time out</li>
+    <li>Goal: scalable interaction</li>
+    <li>Asynchronous will need to be built at some point, so it should be the initial implementation.</li>
+    <li>Minimal information sent in URL at POST.  This will limit the things that need to change in the future.  Archive should read metadata to get needed information.</li>
+    <li>Polling needs throttling to prevent users or coders from causing performance problems with excessive polling.</li>
+    <li>Archive should perform some validations before adding data to repository.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Publishing a New Module:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Should be Asynchronous</li>
+    <li>API sends zip file to Repo</li>
+    <li>Repo unzips and performs validation &  error handling</li>
+    <li>Resources are assigned id’s and stored in Repo</li>
+    <li>HTML is stored</li>
+    <li>Success message contains link to published content</li>
+    <li>Triggers export generation and polls services</li>
+    <li>limit intervals of polls</li>
+    <li>throttle pollers if necessary</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Republishing a Module:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Asynchronous</li>
+    <li>API sends URL and zip file to Repo</li>
+    <li>Repo unzips and performs validation &  error handling</li>
+    <li>Checks resource id’s with prior version and updates accordingly</li>
+    <li>Resources are reassigned id’s and stored in Repo</li>
+    <li>New HTML is stored</li>
+    <li>Success message contains link to published content</li>
+    <li>Triggers export generation and polls services</li>
+    <li>limit intervals of polls</li>
+    <li>throttle pollers if necessary</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Deriving a Module:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Editor pulls module from Repo</li>
+    <li>Repo receives call and returns data Editor</li>
+    <li>User modifies module and triggers Publish event</li>
+    <li>API sends URL and zip file to Repo</li>
+    <li>Repo unzips and performs validation &  error handling</li>
+    <li>Checks resource id’s with prior version and updates accordingly</li>
+    <li>Resources are reassigned id’s and stored in Repo</li>
+    <li>New HTML is stored</li>
+    <li>Success message contains link to published content</li>
+    <li>Triggers export generation and polls services</li>
+    <li>limit intervals of polls</li>
+    <li>throttle pollers if necessary</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Publishing a New Collection:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Asynchronous</li>
+    <li>User triggers Pulish event</li>
+    <li>API sends URL and zip file to Repo</li>
+    <li>Repo unzips and performs validation &  error handling</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Each module is handled separately:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Resources are assigned id’s and stored in Repo at module level</li>
+    <li>Update resource references and id’s</li>
+    <li>Update other modules resource references and id’s for newly archived module</li>
+    <li>HTML is stored</li>
+    <li>Success message contains link to published content</li>
+    <li>Triggers export generation and polls services</li>
+    <li>Limit intervals of polls</li>
+    <li>Throttle pollers if necessary</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Needs Further Discussing:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>URL parameters</li>
+    <li>Metadata</li>
+    <li>how to distinguish the published id's</li>
+
     <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>August 20, 2012</span></p>
