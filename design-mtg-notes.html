@@ -3,6 +3,75 @@
     <p><i>These are the notes of the design meetings for the CNX Rewrite project.  The meetings are held Monday and Wednesday at 10 am CT.</i></p>
     <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>September 9, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Git Policy</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Production - isolate branch (clone of master) - accessed only by DevOps</li>
+    <li>Master - stable development - integration point</li>
+    <li>Branches - unstable development - test thoroughly and push often</li>
+    <li>Release Branch - hotfixes for production release</li>
+    <li>Master - default branch to checkout/clone</li>
+    <li>Devs commit to development branch then merge to master. Never commit directly to master.</li>
+    <li>README on Master will explain branch layouts</li>
+    <li>There was some discussion about using the Gitflow suggested workflow.  Ed said that he was trying to come up with something really simple and that it could be revisited and adjusted if we need to.</li>
+    <li>Ed will update diagram to be more clear</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Git Goals</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Isolates Production</li>
+    <li>Master - stable development environment</li>
+    <li>Simple clear policy</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Archive API Requirements</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Requirements doc: https://docs.google.com/document/d/1fzJZD8Ga-l4PPwkohp4MSW6DCfCS7dHC24pmR4XNAos/edit#heading=h.bo23y4e22vg</li>
+    <li>specs for implementation</li>
+    <li>update resources and refs</li>
+    <li>Following scenerios for updating resources and refs: (1) change structure (2) parameters (3) http://headers (4) content sent - authors</li>
+    <li>Questions to consider: how often is update needed and structural mapping of references and urls</li>
+    <li>Error descriptions are not user friendly will need translating by editor to send to user</li>
+    <li>API needs to trigger post production jobs and receives url back from transformation services or receives url from editor</li>
+    <li>Success triggers post - Editor does polling</li>
+    <li>If publish does not succeed, author needs to doesn't resubmit. Warning passed to Editor for it to Handle</li>
+    <li>Isolate generated content</li>
+    <li>Blacklist - twitter blacklist policy is a good example: https://dev.twitter.com/docs/rate-limiting#rest</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Logging</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>transactional logging and detailed log</li>
+    <li>some data is short lived and some data is keep</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>SWORD API and API Research:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Sword - use as API or variation of API</li>
+    <li>Sword version2 CNX spec: https://trac.rhaptos.org/trac/rhaptos/wiki/TechnicalDocumentation/Code/Sword</li>
+    <li>Connexions SWORD Implementation Doc: https://docs.google.com/document/d/1E4mzvcHGE_nljj0M2zhFfOmbqmEAtneQ-YBheUH8Znc/edit</li>
+    <li>Review API trends</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Messaging: need to research/decide pros and cons</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li> format: (1) JSON or (2) XML</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>August 30, 2012</span></p>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
