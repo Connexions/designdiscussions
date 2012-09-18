@@ -3,6 +3,161 @@
     <p><i>These are the notes of the design meetings for the CNX Rewrite project.  The meetings are held Monday and Wednesday at 10 am CT.</i></p>
     <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>September 17, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Code Review Plan</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Updated Public Documentation found at: https://docs.google.com/document/d/1lSsvXIm5lpRIAulsdWJjePL6Ob2A3RSHTv0r_HaUVZg/edit</li>
+    <li>Pull Request/Code Correction update</li>
+    <li>Rhaptos Coding Standards need to be updated.</li>
+    <li>Michael volunteered to update them.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Authoring Services</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li> Public Documentation found at: https://docs.google.com/document/d/11Lq2qLzKXGlWBLcX2gRT5LvTiEiWDfYaal0st73ofB4/edit</li>
+    <li>What, why,how, when approach to document for clear, understandable key points.</li>
+    <li>Current system limitations are non-user friendly interface. Complex and not simple to navigate through.</li>
+    <li>Difficult for nontechnical people to publish content.</li>
+    <li>Goal is to have a smooth, user friendly web interface and improve performance and functionality.</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Transformation Services</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Public Documentation found at: https://docs.google.com/document/d/176hepG1Es_as9f81vJlRPMRRbN9k427fN_sdRugSu4c/edit</li>
+    <li>The goal for Services will be independent, modular components</li>
+    <li>Isolation of the import/export services will be beneficial for optimal performance, data flow, and future support of services and components.</li>
+    <li>LaTex will be supported in first generation</li>
+    <li>LaTex needs to be rewritten for HTML5. May not as simple as merely wrapping services; however, this strategy is the first choice</li>
+    <li>Services will run on CNXML initially</li>
+    <li>Asynchronous exporting services will be difficult with CNXML and DocBook</li>
+    <li>Wrap services with API's but components will not initially be separate components</li>
+    <li>Consider building into infrastructure support for users relying on these services as separate components. Decision: yes, this is the goal.</li>
+    <li>The goal is to have separate components for these services which will allow more efficient data analysis, easier to modify existing components and overall future support.</li>
+    <li>Define complete zip definition in new system. Is the offline HTML and complete zip similar? Further discussion to distinguish these differences and define each in the new system</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Web View</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Public Documentation found at: https://docs.google.com/document/d/1OuJT7uxbEQHcBWLoSiuobwUA6rOWRpk990quedaFzuI/edit</li>
+    <li>Data in document derived from last month's Google Analytics Data.</li>
+    <li>Data is unique</li>
+    <li>Pages per visit = 1.8</li>
+    <li>Current structure makes it hard to track sessions</li>
+    <li>Homepage visited  approximated 26,000 unique views</li>
+    <li>Change design of homepage</li>
+    <li>Decided to ask Debo to simplify the homepage template</li>
+    <li>Mobile first design approach.</li>
+    <li>Bootstrap is possibly overkill for mobile first design.</li>
+    <li>Design for flip phone. Scales CNX site down in the most extreme case.</li>
+    <li>Bootstrap will allow us to move from the phone to tablet to web.</li>
+    <li>Need to have design discussion and discuss requirements for Web View</li>
+    <li>Sprint demo on Friday after Staff Meeting</li>
+    <li>Monday plant Sprint 7</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Wednesday Discussion:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Transformation Services Requirements</li>
+    <li>Phil's "strawman" development for Transformation Services</li>
+    <li>Revisit Repo Design and API implementation from Design Discussion 9/12/2012</li>
+
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>September 12, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Code Review Plan discussed</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>https://docs.google.com/document/d/1lSsvXIm5lpRIAulsdWJjePL6Ob2A3RSHTv0r_HaUVZg/edit?pli=1</li>
+    <li>goal is maintainable code</li>
+    <li>gitHub tools</li>
+    <li>review code at pull to master if code modifications are minor: fix and commit</li>
+    <li>if code needs refactoring submit another pull request</li>
+    <li>signed off by developer and person reviewing the code</li>
+    <li>use gitHub pull request comments for Code Reviews</li>
+    <li>diff by email for dev or feature branches</li>
+    <li>Code Review Plan will be updated with commands</li>
+    <li>do not use tabs(4 spaces)</li>
+    <li>PEP8</li>
+    <li>comment templates</li>
+    <li>name templates properly</li>
+    <li>JavaScript policies (a) design patterns (b) need to decide how CNX will structure JavaScript (c) .LESS/CSS documentation</li>
+    <li>Code Review Document will be update with all the rules and model discussed</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>SWORD</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Implement SWORD as primary API vs SWORD as secondary API?</li>
+    <li>SWORD is a SPEC</li>
+    <li>Is SWORD too cumbersome?</li>
+    <li>Avoid having 2 API's that are in sync</li>
+    <li>API is public</li>
+    <li>alternative initial RESTful API with JSON</li>
+    <li>SWORD's Authoring tools could be used to push data into other Archives</li>
+    <li>SWORD Authoring tools wouldn't initially have exporting options</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>API Messaging XML vs JSON - (success)</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>XML</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>self documenting</li>
+    <li>human readable/nonprogrammer specific</li>
+    <li>generic and unconstrained</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>JSON</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>schemas/separate documents</li>
+    <li>useful for server side</li>
+    <li>data model is simpler than XML</li>
+    <li>more commonly chosen as the serialization format for web services</li>
+    <li>largely schema - less and entity - free</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>JSON/XML</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>original data format may be XML/JSON use when appropriate</li>
+    <li>using both would not constrain API serialization</li>
+    <li>what works better for mapping data?</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Overview</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Revisit CNX Repo Implementation</li>
+    <li>Feedback for client side API</li>
+    <li>Goal is to build API that is easy to use</li>
+    <li>SWORD version and JSON version of specs</li>
+    <li>No decision made JSON vs XML. Most developers favor JSON</li>
+    <li>SWORD primary vs secondary implementation</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Monday Discussion:</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <ul><li>Code Review Document Revised</li>
+    <li>JSON spec</li>
+    <li>CNX Repos(Unpublished/Published) Discussion: Goal is scalability.Is current Rewrite Design Decision  scalable?</li>
+    <li> http://connexions.github.com/designdiscussions/Rewrite_Design_Decisions.xhtml</li>
+    </ul>
+    <p class='c0'><span></span></p>
+    
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>September 9, 2012</span></p>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c1 c0'><span class='c4'></span></p><p class='c0'><span></span></p>
