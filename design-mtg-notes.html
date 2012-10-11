@@ -1,6 +1,232 @@
 <html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <title>Connexions Rewrite Design Notes</title>    <style type="text/css">img.border{padding: 5px 5px 0px 5px;},ol{margin:0;padding:0}.c5{max-width:700pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c6{color:#1155cc;font-size:10pt;text-decoration:underline}.c9{color:inherit;text-decoration:inherit}.c2{text-indent:36pt;margin-left:108pt}.c1{height:11pt}.c4{font-weight:bold}.c0{direction:ltr}.c3{text-indent:36pt}.c8{font-size:14pt}.c7{text-decoration:underline}.title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}.subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt}h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt}h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt}h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt}h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}</style>  </head>  <body class="c5">    <p class="c0"><img src="images/cnx_logo.png" height="73" width="73"class="border"><span class="c4 c8 c7">Connexions Rewrite Design Meeting Notes</span></p>
     <hr/>
-    <p><i>These are the notes of the design meetings for the CNX Rewrite project.  The meetings are held Monday and Wednesday at 10 am CT.</i></p>
+    <p><i>These are the notes of the design meetings for the CNX Rewrite project.  The meetings are held Tuesday and Wednesday at 10 am CT.</i></p>
+    
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>October 10, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Documentation</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Google Doc (more detailed summary of discussion): https://docs.google.com/document/d/1H8m9OSVI3rZBobkyHQ6mQfEN6Lp7kurP98BRpRxSos0/edit</span></p>
+    <p class='c0'><span>+ Rhaptos List: http://mailman.cnx.rice.edu/pipermail/rhaptos/2012-October/001162.html</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Collection Metadata</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Derived from existing collection metadata and converted into JSON</span></p>
+    <p class='c0'><span>+ Camel case naming convention standard applied</span></p>
+    <p class='c0'><span>+ Abstract isn't plain text - allows a subset of CNXML.</span></p>
+    <p class='c0'><span>+ Objects with multiple selections are arrays</span></p>
+    <p class='c0'><span>+ Versions should be strings as opposed to numbers. need to be human readable</span></p>
+    <p class='c0'><span>+ Metadata fields are optional. as needed basis</span></p>
+    <p class='c0'><span>+ Metadata information should be sent to repository when published</span></p>
+    <p class='c0'><span>+ Where/how to store version numbers</span></p>
+    <p class='c0'><span>+ Editor does not require version numbers</span></p>
+    <p class='c0'><span>+ Superset of all metadata</span></p>
+    <p class='c0'><span>+ Fields that could be dropped: "institution" : "Rice University", "courseCode" : "Elec 301",  "instructor" : "Richard Baraniuk"</span></p>
+    <p class='c0'><span>+ Some metadata is editable and some metadata is not</span></p>
+    <p class='c0'><span>+ Not all print parameters work in current system</span></p>
+    <p class='c0'><span>+ Imaginary Notation - Apply collection parameters to modules.  Necessary for advanced math.</span></p>
+    <p class='c0'><span>+ Collection parameters make coding more difficult and usage is not standardized.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Module Metadata</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ This Metadata is for the Editor.*</span></p>
+    <p class='c0'><span>+  ID will exist in metadata*</span></p>
+    <p class='c0'><span>+ Repository, contentURL, contentID are variations of the same data</span></p>
+    <p class='c0'><span>+ Unknown Metadata fields should be ignored*</span></p>
+    <p class='c0'><span>+ "repository" : "http://cnx.org/content" - location of published content. Originally implemented for federation. Important for export services. This field will be eliminated.</span></p>
+    <p class='c0'><span>+  "contentURL" : "http://cnx.org/content/m42033/latest/" -  location of published content is displayed. Important for export services. This field will be eliminated.</span></p>
+    <p class='c0'><span>+  "contentId" : "m42033" - unique id for content. This field will be kept.</span></p>
+    <p class='c0'><span>+  "title" : "Displacement" - Keep this field. Editable by user.</span></p>
+    <p class='c0'><span>+  "version" : 1.6, - Suggested this be a variation representing the Metadata schema. The elimination of this field is controversial. Elimation of version number would produce AdHoc code mess. Metadata could be auto-upgraded when new versions of code are release. How could this be triggered? Revisit topic. Implement as an incremental counter of version. Exposing previous versions of content is unnecessary. Decided to auto-upgrade when new versions of code are release through Plone with scripting.</span></p>
+    <p class='c0'><span>+  "created" : "2011/12/21 11:09:41 US/Central", -  This field will be renamed. Date created in Editor whether is was revised or not. Name undecided.</span></p>
+    <p class='c0'><span>+  "revised" : "2012/06/20 09:37:54.500 GMT-5", - This is the last revision date. Last time content was Edited.</span></p>
+    <p class='c0'><span>+  "license" : "http://creativecommons.org/licenses/by/3.0/", -  Not needed. This field will be eliminated.</span></p>
+    <p class='c0'><span>+  "subjects" : ["Science and Technology"] - This field will be kept.</span></p>
+    <p class='c0'><span>+  "keywords" : ["Displacement","Distance","Kinematics","Motion","Position"] - This field will be kept. Should be required*</span></p>
+    <p class='c0'><span>+  "abstract" : "<list><item>Define position, displacement, distance,and distance traveled.</item><item>Explain the relationship between position and displacement.</item</list>" - need to convert this field from CNXML to HTML. Parse HTML strings then store. Need to support a subset of CNXML --> MATH, lists, etc. Tags need to be decided. Abstract data could reside and be Edited in the Editor. Should be required*. Discuss with Kathy where abstract will live.</span></p>
+    <p class='c0'><span>+  "language" : "en", - This field will be kept.</span></p>
+    <p class='c0'><span>+  "author" : ["OpenStaxCollege"] - This field will be kept.</span></p>
+    <p class='c0'><span>+  "maintainer" : ["OpenStaxCollege", "cnxcap"] - This field will be eliminated. Currently only used as an ACL.</span></p>
+    <p class='c0'><span>+  "licensor" : ["OSCRiceUniversity"] - This field will be kept.</span></p>
+    <p class='c0'><span>+  Metadata will be stored as JSON for Editor in Unpublished Repository</span></p>
+    <p class='c0'><span>+  Extracted feeds could use the JSON metadata (?)</span></p>
+    <p class='c0'><span>+  Add dictionary list with definition keys for "roles:" with attributions containing: author, license holders, and maintainer. Exposing userid/roles for users adding & editing content. (order sensitive and editable by users via Editor).</span></p>
+    <p class='c0'><span>+ Collaboration can be achieved by sharing content.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span>+ Metadata parameters would be converted from CNXML --> HTML</span></p>
+    <p class='c0'><span>+ Multiple devices/interfaces may need specialized version or is this superset of metadata sufficient?</span></p>
+    <p class='c0'><span>+ Goal is to create a minimal set of metadata then at another point decide on subsets of metadata specific to components/APIs.</span></p>
+    <p class='c0'><span></span></p>
+
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>October 9, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Demo</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Rescheduled for October 29th</span></p>
+    <p class='c0'><span>+ End results from Sprints need to be visible</span></p>
+    <p class='c0'><span>+ Focusing on each component</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> User Repo</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Authentication is completed: OpenID/Persona</span></p>
+    <p class='c0'><span>+ OpenID server component built</span></p>
+    <p class='c0'><span>+ Profiles Database has not been built yet</span></p>
+    <p class='c0'><span>+ Searching for users needs to be built and function</span></p>
+    <p class='c0'><span>+ Migrating existing users is a very IMPORTANT for demo on October 29th</span></p>
+    <p class='c0'><span>+ User Search via web form with the following filters: username, email, etc</span></p>
+    <p class='c0'><span>+ Editor: Exercises over Tables</span></p>
+    <p class='c0'><span>+ Integrate Kathy's teams' MathEditor</span></p>
+    <p class='c0'><span>+ When moving Trello card to doing/done add path to repo</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Configuration Environment Variables</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Need to have configurations reside in a centralized file (.ini)</span></p>
+    <p class='c0'><span>+ Includes (files in a directory) apache.conf   apache.conf.d helps automation, monitoring, etc. This would be useful in later implementations.</span></p>
+    <p class='c0'><span>+ Start with single config file</span></p>
+    <p class='c0'><span>+ Provided config files should override current configs - not a solution at this point</span></p>
+    <p class='c0'><span>+ Default config: namespace/etc in a centralized .ini with component based configs</span></p>
+    <p class='c0'><span>+ Default configuration would point to one or two default locations. One of which would be /etc/<application_name> or something of that nature.</span></p>
+    <p class='c0'><span>+ No environment variable, no config overrides</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span>- Design Meeting Agenda: October 10, 2012</span></p>
+    <p class='c0'><span>+ Metadata/JSON</span></p>
+    <p class='c0'><span>+ WebView</span></p>
+
+    <hr/>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4 c8 c7'><span>October 3, 2012</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c1 c0'><span class='c4'></span></p><p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Web View Requirements Discussion</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ https://docs.google.com/document/d/1pXqy973qAcVcvXBmLPCgmRbA3c6TKnJ5I14DLGk-TXE/edit#</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Deriving A Copy of a Module/Collection</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Should live in Authoring Services</span></p>
+    <p class='c0'><span>+ These steps mark the beginning of the initial process of Authoring without user log in - needs to handle both states: is/is NOT logged in</span></p>
+    <p class='c0'><span>+ Editor makes copy and pulls content into Editor Repo</span></p>
+    <p class='c0'><span>+ Checkout without Publishing has two uses: 1- Direct Editing (eg. Managers) 2- Content revision for collaboration</span></p>
+    <p class='c0'><span>+ Deriving/Saving is dependent on Publishing</span></p>
+    <p class='c0'><span>+ At Publish time a request to submit user content revisions could be sent to the Author, who in return can accept or reject changes</span></p>
+    <p class='c0'><span>+ Default location of deriving a copy is user Workspace</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Lenses</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Web View grants access to add content (modules, collections, or other lenses) to a Lens</span></p>
+    <p class='c0'><span>+ User must be logged in and explicitly add content</span></p>
+    <p class='c0'><span>+ Permissions and data for Lenses live on user server</span></p>
+    <p class='c0'><span>+ UI for Lenses should only have button to send users</span></p>
+    <p class='c0'><span>+ Popup/logic to add content to a Lens exists on another service (Authoring) regardless of location. However, location should decide the work flow. User needs to Add/Store/Structure content.</span></p>
+    <p class='c0'><span>+ Default location for a Lens is My Favorites</span></p>
+    <p class='c0'><span>+ Comments on Lenses: used by 12% of users. Not all comments are used structurally. Decision: will keep comments section.</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Pretty Print</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ currently this user action is not tracked, out of date in regards to current web standards</span></p>
+    <p class='c0'><span>+ current jobs handled by JS/CSS</span></p>
+    <p class='c0'><span>+ Prints without extra surrounding information</span></p>
+    <p class='c0'><span>+ Should new system support this? Decision:  Low priority for now. Future implementation: Print media query via CSS</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Content sharing with Social Media</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Twitter, Google, Facebook</span></p>
+    <p class='c0'><span>+ Social Media app buttons on UI</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Viewing Lists - Portlets/Indexes</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Statistics Tracking is Version 2</span></p>
+    <p class='c0'><span>+ Searches organized by Endorsements, Affiliation, Members. Priority of returned results are undecided.</span></p>
+    <p class='c0'><span>+ Generating Similar Content should be handled by Publishing Event  and store index in Archive</span></p>
+    <p class='c0'><span>+ Lucene could be used for full text search.</span></p>
+    <p class='c0'><span>+ From Web View perspective Related Content and Lens's Searches are similiar as they are indexes stored in the Archive</span></p>
+    <p class='c0'><span>+ Metadata query that exists in the Postgres (Postgres cache queries?)</span></p>
+    <p class='c0'><span>+ How do we build and store these indexes? How can we store these indexes without using too many resources generating the indexes for the Archive. Suggestions:</span></p>
+    <p class='c0'><span>+ 1- Could be built asynchronously with limiting time frame</span></p>
+    <p class='c0'><span>+ 2- Metadata exists in Archive</span></p>
+    <p class='c0'><span>+Related Content built as part of other services vs Building it as an individual component, which is exposed by the Archive API (NOT part of another service)</span></p>
+    <p class='c0'><span>+ 1- Benefits of building it as an individual component would make it easier to test, maintain and scale.</span></p>
+    <p class='c0'><span>+ 2- Benefits of building it as part of other services would reduce the amount of code. However, this approach could cause unnecessary complexity and would not provide a clear separation of user information from data</span></p>
+    <p class='c0'><span>+ 3 - Further Discussion Required</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Information for search</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Search indexes should be stored in Archive</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Recently stored content</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Current system uses cookies to track content whether the user is logged in or not</span></p>
+    <p class='c0'><span>+ New system will not display this by default</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Email an author</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Author email not exposed</span></p>
+    <p class='c0'><span>+ Author can opt in or out email contacts</span></p>
+    <p class='c0'><span>+ If Author opts out, send email to CNX and not Author</span></p>
+    <p class='c0'><span>+ Email forwarding services could be provide for Authors that want to be contacted</span></p>
+    <p class='c0'><span>+ Form sent to author. Validate user email address , user name, message</span></p>
+    <p class='c0'><span>+ CAPTCHAs could help reduce spam</span></p>
+    <p class='c0'><span>+ Simple text human questions could also reduce spam</span></p>
+    <p class='c0'><span>+ SMS could be a possibility to contact Authors</span></p>
+    <p class='c0'><span>+ AntiSpam is currently handled by Timing Sessions with a minimum time frame</span></p>
+    <p class='c0'><span>+ Use mailto as opposed to web form. Comparison of SPAM needed for these two approaches</span></p>
+    <p class='c0'><span>+ Research and Review Current Implementations and current Web Standards regarding AntiSPAM and SPAM filtering</span></p>
+    <p class='c0'><span>+ Further Discussion Required</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span> Help Pages</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Against documentation withinin Module</span></p>
+    <p class='c0'><span>+ Should not live in the Archive</span></p>
+    <p class='c0'><span>+ Where do we store this? Further Discussion Required</span></p>
+    <p class='c0'><span>+ Static pages. Should not store versions.</span></p>
+    <p class='c0'><span>+ Use existing editor, unpub repo, and publish permissions to modify and store the help pages (same machinery as UnPub Repo)</span></p>
+    <p class='c0'><span>+ File system access to edit Help Pages and About Us Pages in Version 1</span></p>
+    <p class='c0'><span>+ CMS/Wiki style</span></p>
+    <p class='c0'><span></span></p>
+    <p class='c0'><span></span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c4'><span>Monday Discussion</span></p>
+    <p class='c1 c0'><span class='c4'></span></p>
+    <p class='c0'><span>+ Continue Web View Requirements Document - Data Tier - https://docs.google.com/document/d/1pXqy973qAcVcvXBmLPCgmRbA3c6TKnJ5I14DLGk-TXE/edit#</span></p>
+    <p class='c0'><span>+ Research and review AntiSPAM and SPAM filtering techniques and current web standards</span></p>
+    <p class='c0'><span>+ use of CAPTCHAs, simple skill questions, etc - http://www.getelastic.com/6-captcha-alternatives-to-improve-conversion/</span></p>
+    <p class='c0'><span>+ Need to decide how to handle contacting the Author. Below are the two proposed techniques be prepared to discuss the pro's and con's for each</span></p>
+    <p class='c0'><span>+ 1- mailto</span></p>
+    <p class='c0'><span>+ 2- web form</span></p>
+    <p class='c0'><span>+ 3 - other alternatives</span></p>
+    <p class='c0'><span>+ Portlet/Index for Related Content and Lenses</span></p>
+    <p class='c0'><span>+ Storage location of static, editable HTML Help Pages</span></p>
+    <p class='c0'><span>+ Persona/BrowserID protocol</span></p>
+
     <hr/>
     <p class='c1 c0'><span class='c4'></span></p>
     <p class='c4 c8 c7'><span>September 17, 2012</span></p>
