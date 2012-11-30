@@ -1,0 +1,171 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Testing &mdash; Rhaptos2 User Server</title>
+    
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Rhaptos2 User Server" href="index.html" />
+    <link rel="next" title="Usermodel" href="usermodel.html" />
+    <link rel="prev" title="SQL Injection and SQLAlchemy" href="sqlinjection.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="usermodel.html" title="Usermodel"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sqlinjection.html" title="SQL Injection and SQLAlchemy"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Rhaptos2 User Server</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-rhaptos2.user.tests.runtests">
+<span id="testing"></span><h1>Testing<a class="headerlink" href="#module-rhaptos2.user.tests.runtests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="runtests">
+<h2>runtests<a class="headerlink" href="#runtests" title="Permalink to this headline">¶</a></h2>
+<p>This is a script (not setup as as an entry point, probably needs to be)
+to execute tests in <a href="#id1"><span class="problematic" id="id2">:rf:`rhaptos2.user`</span></a></p>
+<p>useage:</p>
+<p>Run all tests with the given config</p>
+<blockquote>
+<div>python runtests.py &#8211;config=../../../local.ini</div></blockquote>
+<p>Run only the test modules in modules</p>
+<blockquote>
+<div>python runtests.py &#8211;config=../../../local.ini</div></blockquote>
+<p>Prepopulate (does not build tables)</p>
+<blockquote>
+<div>python runtests.py &#8211;config=../../../local.ini &#8211;prepopulate=Y</div></blockquote>
+<p>this version will connect to the DB in local.ini, and (assuming the tables exist)
+will insert through psycopg2 five test users.</p>
+<p>(OK I swapped out the sqlalchemy prepopulation (which creates tables too) so the whole 
+table creation thing is a little awkward and needs fixing)</p>
+<dl class="function">
+<dt id="rhaptos2.user.tests.runtests.prepopulate">
+<tt class="descclassname">rhaptos2.user.tests.runtests.</tt><tt class="descname">prepopulate</tt><big>(</big><em>settings</em><big>)</big><a class="reference internal" href="_modules/rhaptos2/user/tests/runtests.html#prepopulate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rhaptos2.user.tests.runtests.prepopulate" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Warn :</th><td class="field-body">Horrible hack</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Annoyance: The Configuration object from pumazi (as is convention)</dt>
+<dd>turns ini section &#8220;[app]&#8221; into the root of the object/dict
+However nosetest_config does NOT.
+So, I end up with two config dicts 
+- normal: one with [app] in the current namespace and all sections one lower
+- nosetest_config - straight ini sections-&gt; levels in dict.
+I can either fiddle with normal dict here and add in a [app] dict level
+or frig the .ini file</dd>
+</dl>
+<p>This is just a horrible hack.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/rhaptos2userlogo.jpg" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Testing</a><ul>
+<li><a class="reference internal" href="#runtests">runtests</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sqlinjection.html"
+                        title="previous chapter">SQL Injection and SQLAlchemy</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="usermodel.html"
+                        title="next chapter">Usermodel</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/testing.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="usermodel.html" title="Usermodel"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sqlinjection.html" title="SQL Injection and SQLAlchemy"
+             >previous</a> |</li>
+        <li><a href="index.html">Rhaptos2 User Server</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Authors.txt.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
