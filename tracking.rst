@@ -45,6 +45,9 @@ Webview
 The webview will need to be able to inject the below code or similar 
 into outgoing HTML documnets based on a lookup against the dbase fields refered to above.
 
+If we see webview as sensible place to inject this then a sensible place to 
+store tracking codes is at the user level - they just add once and it is applied always.  This impacts a number of assumptions about publication and ownership so may be needing deeper discussion. 
+
 :discuss:`Do we inject on HTML serving or regularly update stored HTML and serve quicker`
 
 :: 
